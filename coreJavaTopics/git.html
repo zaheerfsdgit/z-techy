@@ -1,0 +1,182 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git and Git Hub </title>
+      <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row topBar">
+            
+        </div>
+    </div>
+     <div class="container">
+        <div class="row pt-3">
+            <div class="col-md-6 col-sm-6  " >
+                 <h1> Git & Git Hub</h1>
+            </div>
+             <div class="col-md-6 pt-3 text-end col-sm-6" id="homeLink">
+               <a class="h4 link-underline link-underline-opacity-0" href="../java_index.html"> Home </a>
+            </div>
+            
+        </div>
+    </div>
+    
+  
+<br/>
+<div class="container topics pt-2" id="allTopics">
+    <div class="row  mb-2">
+           <div class="col-md-2 col-sm-2 mb-4">
+                <a href="#gitIntro" class="text-decoration-none  border border-success py-2 px-3 "> Git Introduction</a>
+            </div>
+
+             <div class="col-md-2 col-sm-2 mb-4">
+                <a href="#gitHubIntro" class="text-decoration-none border border-success  py-1 px-3"> Git Hub Introduction </a>
+            </div> 
+    </div>
+</div>    
+
+<div class="pt-2 "> </div>
+<div class="container border border-2 border-primary p-3 ">
+
+    <div class="row px-5 py-2" id="gitIntro">
+
+        <h4 class="bg-success-subtle py-2"> Git Introduction </h4> 
+        
+<pre style="font-size:20px;">
+
+Git is a tool that helps you manage changes to your code over time. 
+It keeps track of every little change or update you make, 
+you can always look back at previous versions or undo mistakes if needed.
+
+</pre>
+
+<h4 class="bg-danger-subtle py-2"> Features of Git </h4>
+<pre style="font-size:20px;">
+Version Control System
+
+Repositories
+    -- Local Repositories   
+    -- Remote Repositories (Git Hub)
+
+Commits
+
+Branches
+
+Merging
+
+Cloning
+
+</pre>
+
+<h4 class="bg-warning-subtle py-2"> Reasons to Choose Git </h4>
+<pre style="font-size:20px;">
+Distributed System
+
+Performance
+
+Branching and Merging
+
+Collaboration 
+(Git Collaborate with Git Hub and Enhance the Team Collaboration, 
+Code reviews and Project Management)
+
+Track Changes
+
+</pre>
+
+<h4 class="bg-info-subtle text-black py-2"> Steps to Setup a Git </h4>
+<pre style="font-size:20px;">
+
+-- First Download the Git from official Git Web Site
+-- Then Install the Git.
+
+Now, Configure the Git and Set up your username and eamil as below;
+<font color="red">
+>> git config --global user.name "Your Name"
+>> git config --global user.email "your.email@example.com"
+</font>
+Now, check version of Git and check Configure details:
+
+>>git --version
+==============> to check git version
+
+>>git config --global --list
+=============> to check user name and user email details
+
+</pre>
+
+<h4 class="bg-success-subtle text-black py-2"> Create a Repository </h4>
+<pre style="font-size:20px;">
+
+-- Navigate your project directory and initialize a Git Repository.
+
+-- Use below command.
+
+>> git init
+
+</pre>
+
+<h4 class="bg-primary-subtle text-black py-2"> Make First Commit </h4>
+<pre style="font-size:20px;">
+
+>> git status
+
+-- git status command Shows the status of changes in your working directory.
+-- it is also used to check staging and tracking status.
+
+So that we use "add" command.
+
+-- Adding files to the staging area and commit your changes.
+-- Use below command.
+
+>> git add .  OR >> git add file name OR git add *
+
+-- By using add command file get into staging and tracking status.
+
+*** So Now check git status, 
+*** Now it seems that "on master branch" but with no commits
+
+-- So, Use no commit command
+
+>> git commit -m "First Commit"
+
+-- Now check the status wiht >> git status
+
+-- Log command used to check all commits list / details 
+
+>> git log OR >> git log --oneline
+
+-- diff command 
+
+>> git diff
+
+-- It shows the changes that we have done in coding in between the commits 
+-- by taking commit's hash values.
+
+</pre>
+
+<h4 class="bg-success-subtle text-black py-2"> Push Project into Git Repository Process </h4>
+<pre style="font-size:20px;">
+
+-- Once you done with basic commands like 
+-- init, status, add, commit log then now do Push
+
+--- Now go to <font color="blue">Git Hub and Create new Repository </font>So that you will be 
+get below details, now come to Git Bash and use below commands
+to push your project to Git Repository - you should need your Git Hub account..
+
+git branch -M main
+git remote add origin https://github.com/zaheerfsdgit/testing-123.git
+git push -u origin main
+
+** Now use above commands one by one in Git Bash.
+
+
+</div>
+</div>
+
+</body>
+</html>

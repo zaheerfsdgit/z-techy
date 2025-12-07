@@ -1,0 +1,206 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row topBar">
+            
+        </div>
+    </div>   
+     <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6  ">
+                 <h1> Maven with JDBC Process </h1>
+            </div>
+             <div class="col-md-6 pt-3 text-end col-sm-6">
+               <a class="h4 link-underline link-underline-opacity-0" href="../java_index.html"> Home </a>
+            </div>
+            
+        </div>
+    </div>
+
+<br/>
+<div class="container topics">
+    <div class="row  mb-2">
+           <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#processArea" class="text-decoration-none  border border-success py-2 px-3 "> Process Details</a>
+            </div>
+            <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#htmlFiles" class="text-decoration-none border border-success py-1 px-3"> pom.xml  </a>
+            </div> 
+
+             <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#cssFile" class="text-decoration-none border border-success py-1 px-3"> App.java / Controller </a>
+            </div> 
+
+            <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#registerServlet" class="text-decoration-none border border-success  py-1 px-3"> DAO Class </a>
+            </div>
+  
+    </div>
+
+<div class="pt-5 "> </div>
+
+<div class="container border border-2 border-primary p-3 ">
+
+<div class="row px-5 py-2" id="dataWriting">
+
+<h4 class="bg-success-subtle py-2"> Maven with JDBC Process Steps </h4> 
+        
+<pre style="font-size:20px;">
+
+In Java, an ArrayList is a resizable array implementation of the List interface, 
+found within the java.util package. It provides a dynamic array that can grow or shrink 
+in size as elements are added or removed, unlike traditional arrays which have a fixed size.
+
+</pre>
+<br/><br/>
+<h4 class="bg-danger-subtle py-2" id="processArea">  Maven with JDBC Required Softwares  </h4>
+
+<pre style="font-size:20px;">
+
+   Install JDK
+
+   Install MySql
+
+   Install MySql Connetor J
+
+   Install Apache Tomcat Server( from Apache Official WebSite.)
+
+   We need to take Maven Project or Need to install the Maven s/w and Setup from Eclipse or Intelli J
+
+</pre>
+
+<h4 class="bg-info-subtle py-2" >  Required Classes for Maven with JDBC  </h4>
+
+<pre style="font-size:20px;">
+
+   pom.xml
+    
+   Entity Class
+
+   DAO Class / Data Base Connection Class
+
+   Controller [ App.java Class - it comes by default with Maven Project]
+
+   Go to Mvn Repository and copy the MySql Connector J Dependency and add in pom.xml file
+
+</pre>
+
+<h4 class="bg-danger-subtle py-2" >  pom.xml file </h4>
+
+<pre style="font-size:20px;"> <xmp>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>Project1</groupId>
+  <artifactId>SbiOnline</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>SbiOnline</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+  
+  <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+<dependency>
+    <groupId>com.mysql</groupId>
+    <artifactId>mysql-connector-j</artifactId>
+    <version>8.3.0</version>
+</dependency>
+  
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
+</xmp>
+</pre>
+
+<h4 class="bg-info-subtle py-2" >  App.java / Controllers </h4>
+
+<pre style="font-size:20px;"> 
+package Project1.SbiOnline;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class App 
+{
+    public static void main( String[] args ) throws SQLException
+    {
+    System.out.println( "Hello World! From Maven" );
+        
+    Connection conn = DAO.getDbConnect();
+    
+    if(conn != null ) System.out.println("Db connected");
+    else System.out.println("Db not ");
+    
+    PreparedStatement ps = conn.prepareStatement("Insert into employee values(103,'Ken','Project Manager')");
+    
+    int row = ps.executeUpdate();
+    
+    if(row>0) System.out.println("row inserted");
+    else System.out.println("row not");
+    }
+}
+
+</pre>
+<h4 class="bg-warning-subtle py-2" >  DAO Class </h4>
+
+<pre style="font-size:20px;"> 
+package Project1.SbiOnline;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DAO {
+	
+public static Connection getDbConnect() {
+		
+    try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+    } 
+    catch (ClassNotFoundException e) {
+        
+        e.printStackTrace();
+    }
+    Connection conn=null;
+    try {
+        conn= DriverManager.getConnection(
+            "jdbc:mysql://localhost:3306/zdatabase", "root", "root"
+        );
+    } 
+    catch (SQLException e) {
+    
+        e.printStackTrace();
+    }
+    
+    return conn;
+	}
+
+}
+</pre>
+
+</div>								<!-- Coding Container-->
+</div>						<!-- Coding Container's Row -->
+</div> 				<!-- Main Container-->
+  
+</body>
+</html>

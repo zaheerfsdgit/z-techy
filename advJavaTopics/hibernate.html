@@ -1,0 +1,552 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Boot</title>
+     <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+      <div class="container-fluid">
+        <div class="row topBar">
+            
+        </div>
+    </div>   
+     <div class="container">
+        <div class="row pt-3">
+            <div class="col-md-6 col-sm-6  ">
+                 <h1> Hibernate  </h1>
+            </div>
+             <div class="col-md-6 pt-3 text-end col-sm-6" id="homeLink">
+               <a class="h4 link-underline link-underline-opacity-0" href="../java_index.html""> Home </a>
+            </div>
+            
+        </div>
+    </div>
+<br/>
+<div class="container topics" id="allTopics">
+    <div class="row  mb-2">
+           <div class="col-md-2 col-sm-2 mb-4">
+                <a href="#hibernateIntro" class="text-decoration-none  border border-success py-2 px-3 "> Hibernate Intro </a>
+            </div>
+             <div class="col-md-3 col-sm-3 mb-4">
+                <a href="#orm" class="text-decoration-none border border-success  py-1 px-3"> Understanding ORM </a>
+            </div> 
+            <div class="col-md-4 col-sm-4 mb-4 border">
+                <a href="#hibernateAnnotations" class="text-decoration-none border border-success py-1 px-3">  Hibernate Annotations & Dependancies</a>
+            </div> 
+          
+              <div class="col-md-3 col-sm-3 mb-4">
+                <a href="#entityAnnotation" class="text-decoration-none border border-success py-1 px-3">  @Entity Annotation </a>
+            </div> 
+            <div class="col-md-2 col-sm-2 mb-4">
+                <a href="#tableAnnotation" class="text-decoration-none border border-success  py-1 px-3"> @table Annotation</a>
+            </div>
+             <div class="col-md-2 col-sm-2 mb-4">
+                <a href="#idAnnotation" class="text-decoration-none border border-success  py-1 px-3"> @Id Annotation</a>
+            </div>
+            <div class="col-md-3 col-sm-3 mb-4">
+                <a href="#columnAnnotation" class="text-decoration-none border border-success  py-1 px-3"> @Column Annotation</a>
+            </div>
+            <div class="col-md-5 col-sm-5 mb-4">
+                <a href="#generateAnnotation" class="text-decoration-none border border-success  py-1 px-3"> @GenratedValues Annotation </a>
+            </div>
+
+            <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#sampleProHibernate" class="text-decoration-none border border-success  py-1 px-3"> Hibernate Core Dependancy</a>
+            </div>
+             <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#sampleProHibernate" class="text-decoration-none border border-success  py-1 px-3"> Sample Program of Hinbernate </a>
+            </div>
+
+            <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#generateAnnotation" class="text-decoration-none border border-success  py-1 px-3"> hibernate.cfg.xml file </a>
+            </div>
+
+            <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#sampleProHibernate" class="text-decoration-none border border-success  py-1 px-3"> SessionFacotry</a>
+            </div>
+             <div class="col-md-2 col-sm-2 mb-3">
+                <a href="#sampleProHibernate" class="text-decoration-none border border-success  py-1 px-3"> Session </a>
+            </div>
+               <div class="col-md-2 col-sm-2 mb-3">
+                <a href="#sampleProHibernate" class="text-decoration-none border border-success  py-1 px-3"> Transaction </a>
+            </div>
+     
+    </div>
+</div>
+<div class="pt-3 "> </div>
+<div class="container border border-2 border-primary p-3 ">
+
+<div class="row px-5 py-2" id="hibernateIntro">
+
+<h4 class="bg-info-subtle py-2" id="springBootIntro"> Hibernate Introduction </h4> 
+        
+<pre style="font-size:20px;">
+
+Hibernate is a Framework of JDBC and it is also an ORM Tool
+
+ -- ORM Tool performs the ORM Techniques to perform CRUD Opertions behalf of Programmers.
+
+ -- By Using ORM technique Java Objects are Mapped with Data Base.
+
+What Hibernate Provides:
+
+Basically, Hinbernate provides some essential components knows as core objects for managing
+databsae interctions; for example, the <font color="red">"SessionFacotry"</font> creates Session objects, the 
+"Session" handles Database operations, the "Transaction" manages transatoins etc.
+
+Hibernate Configuration file enables Hibernate to properly connect to and interact with 
+the Data Base.
+
+    --> This file is used define database connection setting (like database URL, username, password)
+    --> & mapping infromation and Hibernate properties (like dilect and caching)
+    --> This file is typically named as "hibernate.cfg.xml"
+
+Hibernate Mapping defines how java objects link to Data Base tables, 
+
+ -- It shows which class maps to which table. 
+ -- how object propeties match table columns
+ -- and how object values correspond to table rows / table data.
+
+ ==== Mapping task we can perform in Annotatoin Based and XML Based too.
+
+</pre>
+
+<h4 class="bg-success-subtle py-2" id="orm"> Understanding ORM </h4> 
+        
+<pre style="font-size:20px;">
+
+ORM - Object Relational Mapping
+
+Here Object means Java Object / Model Class
+
+and Relationa means Reational DataBase / RDBMS
+
+and Mapping means Java Objects directly talks with DataBase Tables without help of JDBC.
+
+Basically, 
+
+Java Applicatoin contains Java Class which converts into Java Object
+
+And Java Object contains Class name, Properties and Object- Values
+
+So, here Java object becomes table name of Data Base.
+
+And Properties becomes column names of Table.
+
+And Object-values becomes table-data or row in table.
+
+</pre>
+
+<h4 class="bg-warning-subtle py-2" id="hibernateAnnotations"> Hibernate Annotaions & Dependencies </h4> 
+        
+<pre style="font-size:20px;">
+
+@Entity
+@Table
+@Id
+@Column
+@GenratedValues
+
+-- hibernate-core Dependancy
+-- mysql Connector Java Dependancy
+
+</pre>
+
+<h4 class="bg-success-subtle py-2" id="sampleProHibernate"> Hibernate Project Creation in Maven </h4> 
+        
+<pre style="font-size:20px; border:2px solid blue; width:auto;">
+
+Steps to Create Hibernate Project:
+
+New --> Maven Project --> Next --> Internal (Catalog) --> quick start 
+
+then you get New Maven Project Dialogue Box
+
+Group Id    : in.wiprotech
+
+Artifact Id : HibernateProject
+
+Package     : in.wt.main
+
+Then click on Finish
+
+
+</pre>
+
+<h4 class="bg-info-subtle py-2" id="entityAnnotation"> @Entity Annotation </h4> 
+        
+<pre style="font-size:20px;">
+
+** We Shoud use javax.persistance.Entity for mapping 
+in Hibernate instead of using org.hibernate.annotations.Entity.
+
+<font color="blue" size="4">
+    javax.persistance.Entity is a part of JPA.
+
+    org.hibernate.annotations.Entity is specific to hibernate only, reducing portability.
+</font>
+</pre>
+
+<h4 class="bg-danger-subtle py-2 text-dark" id="tableAnnotation"> @Table Annotation </h4> 
+        
+<pre style="font-size:20px;">
+
+    @Table Annotation:
+
+</pre>
+
+
+<h4 class="bg-warning-subtle py-2 text-dark" id="idAnnotation"> @Id Annotation </h4> 
+        
+<pre style="font-size:20px;">
+
+    @Id Annotation:
+
+</pre>
+
+<h4 class="bg-info-subtle py-2 text-dark" id="columnAnnotation"> @Column Annotation </h4> 
+        
+<pre style="font-size:20px;">
+
+    @Column Annotation:
+
+</pre>
+
+<h4 class="bg-primary-subtle py-2 text-dark" id="generateAnnotation"> @Column Annotation </h4> 
+        
+<pre style="font-size:20px;">
+
+   @GeneratedValue Annotation:
+
+   @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+   @Column
+
+</pre>
+
+<h4 class="bg-success-subtle py-2" id="sampleProHibernate"> Sample Program of Hibernate </h4> 
+        
+<pre style="font-size:20px;">
+
+Hibernate Sample Program Structure: 
+
+-- User Class in Entity Package
+    ==> in.wiprotech.entities Package name
+    ==> User.java class name
+
+-- Hibernate Configuration File (Xml Based) in Config Package
+    ==> in.wiprotech.config package Name
+    ==> hibernate.cfg.xml
+
+-- App.Java in main package
+    ==> in.wiprotech.main 
+    ==> App.java Class Name
+
+
+</pre>
+
+<h4 class="bg-warning-subtle py-2" id="hibernateConfigFile"> Hibernate Configuration File </h4> 
+    
+    We need to write below tags
+    <pre>    
+        1. Schema 
+        2. hibernate-configuration tag
+            session-factory tag 
+                property tags
+                mapping tags</pre>  
+<pre style="font-size:20px;">
+
+hibernate.cfg.xml file you need to obtain it from below path.
+<font color="blue">
+Go to Maven Dependencies Folder --> hibernate core dependency --> org.hibernate
+--> hibernate-configuration --> copy Schema --> and paste in your project "hibernate.cfg.xml" file.
+</font>
+<b>Schema</b><xmp> <?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+</xmp>
+
+<b>hibernate-configuration tag</b>
+    <pre><xmp><hibernate-configuration>
+ <session-factory>
+    <!-- Database connection settings -->
+    <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/mydatabase</property>
+    <property name="connection.username">root</property>
+    <property name="connection.password">password</property>
+
+    <!-- SQL dialect -->
+    <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+    <!-- Schema management -->
+    <property name="hbm2ddl.auto">update</property>
+
+    <!-- Show SQL in console -->
+    <property name="show_sql">true</property>
+    <property name="format_sql">true</property>
+
+    <!-- Mapping resources (example for annotated classes) -->
+    <mapping class="com.example.entity.User"/>
+    <mapping class="com.example.entity.Product"/>
+
+</session-factory>
+</hibernate-configuration></xmp></pre>
+
+<h4 class="bg-success-subtle py-2" id="entiyClass"> User Class / Entity Class </h4> 
+<pre style="font-size:20px;">package com.pack1.beans;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
+public class Employee {
+	
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+@Column
+private int eid;
+
+@Column
+private String ename;
+
+@Column
+private int salary;
+
+public int getEid() {
+    return eid;
+}
+
+public void setEid(int eid) {
+    this.eid = eid;
+}
+
+public String getEname() {
+    return ename;
+}
+
+public void setEname(String ename) {
+    this.ename = ename;
+}
+
+public int getSalary() {
+    return salary;
+}
+
+public void setSalary(int salary) {
+    this.salary = salary;
+}	
+}</pre>
+
+<h4 class="bg-info-subtle py-2" id="hibernateConfigFile"> Required Dependancies </h4> 
+    
+<pre style="font-size:20px;">
+    Hibernate Core Dependency
+    MySql Driver Dependency
+<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+<xmp><dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-core</artifactId>
+    <version>5.6.15.Final</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+<dependency>
+    <groupId>com.mysql</groupId>
+    <artifactId>mysql-connector-j</artifactId>
+    <version>8.3.0</version>
+</dependency></xmp></pre>
+
+<h4 class="bg-info-subtle py-2" id="hibernateConfigFile"> App.java / main class </h4> 
+    
+<pre style="font-size:20px;">package com.pack1.hibernate101;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.pack1.beans.Employee;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello World!" );
+        
+        Employee emp1 = new Employee();
+        
+        emp1.setEid(123);
+        emp1.setEname("Raju");
+        emp1.setSalary(56000);
+        
+        Configuration cfg = new Configuration();
+        cfg.configure("/com/pack1/config/hibernate.cfg.xml");
+        
+        SessionFactory sessoinFactory = cfg.buildSessionFactory();
+        Session session = sessoinFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        
+        <font color="green">// Here sessoin provides crud operations
+        // And We do not need of write Sql Queries like JDBC
+        // Hibernate will take care of Sql Queries
+        // Hibernate Says - As a Java Developer why you focus on sql queries </font>
+        
+        try
+        {
+        session.save(emp1);
+        transaction.commit();
+        }
+        catch(Exception ex)
+        {
+        	transaction.rollback();
+        	ex.printStackTrace();
+        }
+       
+    }
+}
+
+<font color="blue" size="5"> Complete Program: </font>
+
+package com.pack1.hibernate101;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.pack1.beans.Employee;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello World!" );
+        
+        Employee emp1 = new Employee();
+        
+//        emp1.setEid(123); 			// with Id
+//        emp1.setEname("Raju");
+//        emp1.setSalary(56000);
+        
+       emp1.setEname("Tom");			// without Id
+       emp1.setSalary(46000);
+        
+        Configuration cfg = new Configuration();
+        cfg.configure("/com/pack1/config/hibernate.cfg.xml");
+        
+        SessionFactory sessoinFactory = cfg.buildSessionFactory();
+        Session session = sessoinFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        
+        //Here sessoin provides crud operations
+        
+        /* Insert Operation using Hibernate Style */
+        
+        try
+        {
+        session.save(emp1);
+        transaction.commit();
+        
+        System.out.println(" User Added SuccessFully..!!");
+        }
+        catch(Exception ex)
+        {
+        	transaction.rollback();
+        	ex.printStackTrace();
+        	 System.out.println(" User Not Added Due to Some Error ..!!");
+        }
+        
+        
+        /* Select Operation using Hibernate Style */
+        
+        try
+        {
+        	Employee emp = session.get(Employee.class, 5);
+        	
+        	if(emp != null)
+        	{
+        	System.out.println(emp.getEid());
+        	System.out.println(emp.getEname());
+        	System.out.println(emp.getSalary());
+        	}
+        	else
+        	{
+        		System.out.println("Employee Not Found..!!");
+        	}
+        	
+        }
+        catch(Exception ex)
+        {
+        	
+        	ex.printStackTrace();
+        	
+        }
+        
+        /* Update Operation using Hibernate Style */
+        
+//        Employee emp = new Employee();
+//          emp.setEid(1);
+//	      emp.setSalary(86000);
+	        
+        try
+        {
+        	
+        	Employee emp = session.get(Employee.class, 2);
+        	emp.setSalary(33000);
+        	
+        	session.saveOrUpdate(emp);
+        	transaction.commit();
+        	
+        	System.out.println("Employee Updated SuccessFully ..!!");
+        	
+        }
+        catch(Exception ex)
+        {
+        	transaction.rollback();
+        	ex.printStackTrace();
+        	
+        	System.out.println("Employee Updation Failed ..!!");
+        	
+        }
+
+           /* delete operation using hibernate style */
+        
+        try
+        {
+        	Employee emp = new Employee();
+        	emp.setEid(1);
+        	
+        	session.delete(emp);
+        	transaction.commit();
+        	
+         	System.out.println("Employee Deleted ..!!");
+        }
+        catch(Exception ex)
+        {
+        	transaction.rollback();
+        	ex.printStackTrace();
+        	
+        	System.out.println("Employee Not Deleted ..!!");
+        }
+        
+       
+    }
+}
+
+</pre>
+
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,490 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring MVC</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row topBar">
+            
+        </div>
+    </div>   
+     <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6  ">
+                 <h1> Spring MVC with Maven</h1>
+            </div>
+             <div class="col-md-6 pt-3 text-end col-sm-6">
+               <a class="h4 link-underline link-underline-opacity-0" href="../java_index.html"> Home </a>
+            </div>
+            
+        </div>
+    </div>
+  <br/>
+<div class="container topics">
+    <div class="row  mb-2">
+           <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#springJdbcModule" class="text-decoration-none  border border-success py-1 px-3 "> Spring -Web MVC </a>
+            </div>
+
+             <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#driverManagerDataSource" class="text-decoration-none border border-success  py-1 px-3"> Understanding Dispatch Servlet</a>
+            </div> 
+            
+            <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#jdbcTemplate" class="text-decoration-none border border-success py-1 px-3">  Configuring Dispatch Servlet </a>
+            </div> 
+
+             <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#namedParameter" class="text-decoration-none border border-success py-1 px-3">  Spring Configuration File </a>
+            </div> 
+
+             <div class="col-md-4 col-sm-4 mb-3">
+                <a href="#namedParameter" class="text-decoration-none border border-success py-1 px-3">  Configuring Handler Mapping [with Spring Config ]</a>
+            </div> 
+
+              <div class="col-md-4 col-sm-4 mb-3">
+                <a href="#namedParameter" class="text-decoration-none border border-success py-1 px-3">  Spring Configuration File for Handler Mapper</a>
+            </div> 
+           
+            <div class="col-md-4 col-sm-4 mb-3">
+                <a href="#sampleSpringJdbcProgram" class="text-decoration-none border border-success py-1 px-3">  Sample Spring WEB MVC Program </a>
+            </div> 
+
+             <div class="col-md-2 col-sm-2 mb-3">
+                <a href="#sampleSpringJdbcProgram" class="text-decoration-none border border-success py-1 px-3">  Model Interface  </a>
+            </div> 
+
+             <div class="col-md-2 col-sm-2 mb-3">
+                <a href="#sampleSpringJdbcProgram" class="text-decoration-none border border-success py-1 px-3">  @RequestParam </a>
+            </div> 
+
+             <div class="col-md-2 col-sm-2 mb-3">
+                <a href="#sampleSpringJdbcProgram" class="text-decoration-none border border-success py-1 px-3">  @ModelAttribute </a>
+            </div> 
+</div>
+
+<div class="pt-3 "> </div>
+<div class="container border border-2 border-primary p-3 ">
+
+<div class="row px-5 py-2" >
+
+<h4 class="bg-success-subtle py-2 text-black" id="springJdbcModule"> All About Spring MVC </h4> 
+<pre>
+
+<font color="black" size="5"> We need to understand : </font>
+
+<b><font color="green" size="4"> -- Spring Web Module
+ -- Spring WEB-MVC
+ -- Architecture of Spring WEB-MVC
+ -- Working process of Spring WEB-MVC </font></b>
+</pre>
+
+<h4 class="bg-warning-subtle py-2 text-black" id="springJdbcModule"> Spring WEB Module</h4> 
+        
+<pre style="font-size:20px;">
+
+Spring WEB-MVC is a specific module within Spring Web that implements the 
+Model-View-Controller (MVC) Design Pattern.
+
+It simplifies building web applications by separating the Data Layer (Model),
+Presentation Layer (View) and Business Logic Layer (Controller)
+
+</pre>
+
+<h4 class="bg-primary-subtle py-2 text-black" id="springJdbcModule"> Spring WEB-MVC Module</h4> 
+        
+<pre style="font-size:20px;">
+
+Spring Web Module is the part of Spring Framwork
+that provides the foundation for creating Web Applicatoin.
+
+It offers features like handling HTTP request and resonse,
+integrating with various web technologies, managing sessions etc
+
+</pre>
+
+<h4 class="bg-primary-subtle py-2 text-black" id="springJdbcModule"> Architecture of Spring WEB-MVC </h4> 
+        
+<pre style="font-size:20px;">
+<font size="5" color="blue">Process Image</font>
+
+<img src="smv.png" style="width:80%;height:auto;">
+
+</pre>
+
+</div>
+</div>
+
+
+<div class="pt-3 "> </div>
+<div class="container border border-2 border-primary p-3 ">
+<div class="row px-5 py-2" >
+<h4 class="bg-info-subtle py-2" id="xmlBased"> 
+    Working Process -  Required Classes </h4> 
+        
+<pre style="font-size:20px;">
+
+<a href="" style="text-decoration: none;" > pom.xml to Add Dependencies </a>
+
+<a href="" style="text-decoration: none;" > Index.jsp file - write some html code - put a link tag </a>
+
+<a href="" style="text-decoration: none;" > Web.Xml to write script tag for DispatcherServlet </a>
+
+[ In Web.Xml - Servlet Name should match with Spring Config file name - myds]
+
+<a href="" style="text-decoration: none;"> Spring Config File / Name should be [ myds-servlet.xml ] -  </a>
+
+[ We need to Handler Mapping and it is done in Spring Config File it self.]
+
+<a href="" style="text-decoration: none;"> App.Java as Controller / Main Class  -- com.ts.main [ By Default package comes aling wiht App.java ]</a>
+
+</pre>
+
+</div>
+</div>
+
+<div class="pt-3 "> </div>
+<div class="container border border-2 border-primary p-3 ">
+<div class="row px-5 py-2" >
+
+<h4 class="bg-success-subtle py-2"> pom.xml to Add Dependencies  </h4> 
+<pre style="font-size:20px;"> 
+<b style="color:blue;">Go to MVN Repository</b>
+
+-- Spring Web Mvc
+-- Servlet API Depepndancy (Jakarta) - it invokes servlet.init()
+-- Spring Jdbc Dependancy
+-- MySQL Connector/J
+<xmp>
+<dependencies>
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>3.8.1</version>
+    <scope>test</scope>
+</dependency>
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-webmvc</artifactId>
+    <version>6.2.11</version>
+</dependency>
+
+<dependency>
+    <groupId>jakarta.servlet</groupId>
+    <artifactId>jakarta.servlet-api</artifactId>
+    <version>6.0.0</version>
+    <scope>provided</scope>
+</dependency>
+</dependencies></xmp></pre>  
+
+<h4 class="bg-primary-subtle py-2"> index.html file </h4> 
+<pre style="font-size:20px;"><xmp><html>
+<head>
+<title> Web MVC Spring</title>
+<style>
+a { font-size:30px;}
+
+</style>
+
+</head>
+<body>
+<h2>Spring - MVC</h2>
+
+<a href="aboutuspage"> about-us </a> <br/> <br/>
+
+<a href="productspage"> products </a> <br/> <br/>
+
+<a href="contactuspage"> contact-us </a>
+
+<a href="formpage"> my-form </a>
+
+</body>
+</html>
+</xmp></pre>
+
+</div>
+</div>
+
+<div class="pt-3 "> </div>
+<div class="container border border-2 border-primary p-3 ">
+<div class="row px-5 py-2" >
+<h4 class="bg-success-subtle py-2"> Web.Xml to write script tag for Dispatcher Servlet </h4> 
+<pre style="font-size:20px;"> 
+<b style="color:blue;">Go to WEB-INF -> Web.Xml</b>
+
+<font color="blue" size="4">This web.xml work as a entry point
+it is also called as Front Controller and it sends
+request to Handler Mapper and it return controller name.
+
+it means we need to configur the Handler Mapper
+and this handler mapper get configured in Spring Configuration file.</font>
+
+*** image required
+
+-- Servlet Name
+-- Servlet Class - DispatcherServlet
+   [user shirt + ctrl + t and select Fully Qualified class name]
+   [org.springframework.web.servlet.DispatcherServlet]
+-- Servlet Mapping 
+-- url-pattern
+<xmp>
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  
+  <servlet>
+  		<servlet-name>myds</servlet-name>
+  		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  		<servlet-name>myds</servlet-name>
+  		<url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
+</web-app></xmp></pre>  
+
+</div>
+</div>
+
+<div class="pt-3 "> </div>
+<div class="container border border-2 border-primary p-3 ">
+<div class="row px-5 py-2" >
+<h4 class="bg-danger-subtle py-2"> Spring Config / myds-servlet.xml / Configuring Handler Mapping   </h4> 
+<pre style="font-size:20px;"><xmp><?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" 
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd"> 
+        
+<!-- bean definitions here -->            
+<context:component-scan base-package="com.dg.main" />
+  
+<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"></bean>
+
+<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <property name="prefix"  value="/WEB-INF/views/" />
+    <property name="suffix"  value=".jsp" />
+</bean>
+</beans></xmp></pre>  
+
+</div>
+</div>
+
+<div class="pt-3 "> </div>
+<div class="container border border-2 border-primary p-3 ">
+<div class="row px-5 py-2" >
+<h4 class="bg-danger-subtle py-2"> Creating Controller Class  </h4> 
+<pre style="font-size:20px;"> 
+We need to create the " src / main / java " Folder.
+by clicking right button on the project and do refresh.
+
+Then go to that created folder and do right click on it
+and select class and create the package name as com.dg.main 
+as base package and class named as MyController.
+
+and write the Controller code as below
+
+</pre>  
+
+<h4 class="bg-warning-subtle py-2"> MyController [src / main / java -> com.dg.main package] </h4> 
+<pre style="font-size:20px;"> 
+package com.dg.main;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class MyController {
+	
+@GetMapping("/aboutuspage")
+public ModelAndView openAboutUsPage()
+{
+    
+    System.out.println(" openAboutUsPage() method exe ");
+    ModelAndView mav = new ModelAndView();
+    mav.setViewName("about-us");
+    
+    return mav;
+}
+
+@GetMapping("/productspage")
+public ModelAndView productsPage()
+{
+    
+    System.out.println(" productspage() method exe ");
+    ModelAndView mav = new ModelAndView();
+    mav.setViewName("products");
+    
+    return mav;
+}
+
+@GetMapping("/contactuspage")
+public String contactPage()
+{
+    
+    return "contact-us";
+}
+
+****************** directing to form page *********************
+
+@GetMapping("/formpage")
+	public String toformPage()
+	{
+		
+		return "form";
+	}
+	
+****************** directing to controller from front controller  *********************
+
+	@PostMapping("/submitform")
+	public String handleMyForm(@ModelAttribute User user)
+	{
+		System.out.println(user.getUname());
+		System.out.println(user.getPassword());
+		System.out.println(user.getPhone());
+		
+		return "profile";
+	}
+
+}
+
+<font size="5" color="blue">we need to create three jsp pages they are:
+-- about-us.jsp
+-- contact-us.jsp
+-- product.jsp 
+-- form.jsp
+-- profile.jsp </font> 
+<font size="5" color="red">
+ [ From page data travel to profile page throught ]
+
+ [ client -> Front Contrller -> Handler Mapper -> Front controller 
+ 
+ -> Controller using Model Class]</font>
+
+</pre>  
+
+<h4 class="bg-danger-subtle py-2"> about-us.jsp  file </h4> 
+<pre style="font-size:20px;"><xmp><%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>About Us</title>
+</head>
+<body bgcolor="skyblue">
+ <h1> Hello About Us</h1>
+</body>
+</html>
+</xmp></pre>
+
+<h4 class="bg-warning-subtle py-2"> contact-us.jsp file </h4> 
+<pre style="font-size:20px;"><xmp><%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Contact Us</title>
+</head>
+<body bgcolor="gray">
+<h1> You can reach us at 24/7</h1>
+
+
+</body>
+</html>
+</xmp></pre>
+
+<h4 class="bg-success-subtle py-2"> products.jsp file </h4> 
+<pre style="font-size:20px;"><xmp><%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>products page</title>
+</head>
+<body bgcolor="orange">
+
+<h1> Our Products </h1>
+
+</body>
+</html>
+</xmp></pre>
+
+<h4 class="bg-warning-subtle py-2"> myform.jsp  file </h4> 
+<pre style="font-size:20px;"><xmp><%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Form - I</title>
+</head>
+<body>
+
+<h2> Enter the Details: </h2>
+
+<form action="submitform" method="post">
+
+<input type="text" placeholder="User Name" name="uname"> <br/><br/>
+<input type="text" placeholder="Password" name="password"> <br/><br/>
+<input type="text" placeholder="Phone Number" name="phone"> <br/><br/>
+
+<input type="submit" value=" Form Submit"> 
+
+</form>
+</body>
+</html>
+</xmp></pre>
+
+<h4 class="bg-warning-subtle py-2"> profile.jsp file </h4>
+<pre> 
+  
+    <font size="4" color="blue">** Form Page Data Travels to profile page through Spring Config file
+    using ModelAttribute Annotation and User Model Class</font>
+   <font size="4" color="blue">
+        -- user JSTL Dependancy from javax - 1.2 version
+        -- use import taglib for User bean
+        -- and add Expression taglib</font></pre> 
+<pre style="font-size:20px;"><xmp><%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+    
+<%@ page import="com.dg.beans.User" %> -- user bean import
+
+<%@ page isELIgnored = "false" %>  -- Expression tag lib
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Profile</title>
+</head>
+<body bgcolor="yellow">
+
+<h1> Welcome : User</h1>
+
+<h3>User Name     :  ${user.getUname() } </h3>  --  Expression tags
+<h3>Password      :  ${user.getPassword() } </h3>
+<h3>Phone Number  :  ${user.getPhone()} </h3>
+
+</body>
+</html>
+</xmp></pre>
+
+
+</div>
+</div>
+
+
+</body>
+</html>

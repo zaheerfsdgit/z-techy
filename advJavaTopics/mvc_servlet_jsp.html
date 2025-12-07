@@ -1,0 +1,591 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row topBar">
+            
+        </div>
+    </div>   
+     <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6  ">
+                 <h1> MVC with Servlet & Jsp </h1>
+            </div>
+             <div class="col-md-6 pt-3 text-end col-sm-6">
+               <a class="h4 link-underline link-underline-opacity-0" href="../java_index.html"> Home </a>
+            </div>
+            
+        </div>
+    </div>
+  
+<br/>
+<div class="container topics">
+    <div class="row  mb-2">
+           <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#processArea" class="text-decoration-none  border border-success py-2 px-3 "> Process Details</a>
+            </div>
+            <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#htmlFiles" class="text-decoration-none border border-success py-1 px-3"> Html Files  </a>
+            </div> 
+
+             <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#cssFile" class="text-decoration-none border border-success py-1 px-3"> CSS File </a>
+            </div> 
+
+            <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#registerServlet" class="text-decoration-none border border-success  py-1 px-3"> Servlet as Controller / Register Servlet </a>
+            </div>
+            <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#loginServlet" class="text-decoration-none border border-success  py-1 px-3"> Servlet as Controller / Login Servlet</a>
+            </div>
+                   
+            <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#daoClass" class="text-decoration-none border border-success  py-1 px-3"> DAO Class </a>
+            </div>    
+            
+            <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#entityClass" class="text-decoration-none border border-success  py-1 px-3"> Entity Class </a>
+            </div>   
+    </div>
+
+
+<div class="pt-5 "> </div>
+<div class="container border border-2 border-primary p-3 ">
+
+<div class="row px-5 py-2" id="dataWriting">
+
+<h4 class="bg-success-subtle py-2"> MVC with Servlet & Jsp Process </h4> 
+        
+<pre>
+
+In Java, an ArrayList is a resizable array implementation of the List interface, 
+found within the java.util package. It provides a dynamic array that can grow or shrink 
+in size as elements are added or removed, unlike traditional arrays which have a fixed size.
+
+</pre>
+<br/><br/>
+<h4 class="bg-danger-subtle py-2" id="processArea">  MVC with Servlet & Jsp Pre Requisite Softwares </h4>
+
+<pre>
+
+   Install JDK
+
+   Install MySql
+
+   Install MySql Connetor
+
+   Install Apache Tomcat Server( from Apache Official WebSite.)
+
+</pre>
+
+<h4 class="bg-info-subtle py-2" >  Required Classes for MVC with Servlet & Jsp  </h4>
+
+<pre>
+
+   Html Form [Home Page & Register Form page and Login Form page] 
+   
+   Along with Stream line between the pages
+   
+   Styling it with CSS
+    
+   Entity Class
+
+   DAO Class / Data Base Connection Class
+
+   Controller using Servlet
+
+</pre>
+
+<h4 class="bg-success-subtle py-2" id="htmlFiles">  Html Pages   </h4>
+
+<pre>
+<xmp>
+***************************** Index.html / Home Page  *****************************
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ICICI Online Banking</title>
+
+<link rel="stylesheet" href="mystyles.css">
+
+</head>
+<body>
+
+<div class="topBar">
+
+	<div>
+		<h1 id="mainTitle"> ICICI Bank</h1>
+	</div>
+
+	<div id="links">	
+		<a href="register.html"> Register </a>
+		<a href="login.html"> Login </a>
+	</div>
+
+</div>
+
+
+<div class="heroImage">
+		<img src="images/icici1.png"  />
+</div>
+	
+</body>
+</html>
+
+***************************** Register.html / Register Form Page  *****************************
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta charset="UTF-8">
+    <title>Register Form</title>
+    <link rel="stylesheet" href="mystyles.css">
+
+    </head>
+    <body>
+    <div>
+
+    <div id="formArea">
+    <div id="regForm">
+
+    <form action="MyServlet" method="get" >
+    <label>Register with your details.</label><br/><br/>
+    <input type="number" name="uid" placeholder="Enter User id"><br/>
+    <input type="text" name="fname" placeholder="Enter First Name"><br/>
+    <input type="text" name="lname" placeholder="Last Name"><br/>
+    <input type="text" name="email" placeholder="Email Id"><br/>
+    <input type="text" name="phone" placeholder="Phone Number"><br/>
+    <input type="text" name="pwd" placeholder="Password"><br/>
+
+    <button> Register </button>  
+                
+    </form>
+    </div>
+    </div>
+        
+    </div>
+    <br/><br/>
+    <div id="links">	
+        <a href="index.html"> Home </a>
+    </div>	
+    </body>
+    </html>
+
+***************************** Login.html / Login Form Page  *****************************
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login Form</title>
+<link rel="stylesheet" href="mystyles.css">
+	
+</head>
+<body>
+<div>
+	
+<div id="formArea" >
+  <div id="regForm">
+		<form action="LoginServlet" method="post" style="border:2px solid gray; padding:50px 30px; border-radius:30px;">
+			<label style="font-size:20px; color:blue;">Login with your Credentials.</label><br/><br/>
+			<input type="text" name="email" placeholder="Email Id"><br/>
+			<input type="text" name="pwd" placeholder="Password"><br/><br/>
+			<button> Login </button>
+		</form>
+	</div>
+</div>
+
+</div>
+<br/><br/>
+<div id="links">	
+	<a href="index.html"> Home </a>
+</div>
+</body>
+</html>
+</xmp>
+</pre>
+
+<h4 class="bg-warning-subtle py-2" id="cssFile"> CSS File (Styels.css)  </h4>
+
+<pre>
+.topBar{ height:20px; background: green;}
+
+.topHeading > div > #JavaLogo{width:70px;height:70px;}
+
+.menuBarArea{ padding:5px 5px; background: #8A8AFF;}
+
+/* .menuBarArea > div > a {  width: 100%; } */
+
+.menuBarArea {  padding:0;margin:0;}
+
+.menuBarArea > div {height: 100%; padding:10px;}
+
+.menuBarArea > div:hover { 
+         background: rgb(114, 232, 114) !important; }
+
+.menuBarArea > div > a{ text-decoration: none; color:black; 
+        padding:15px;font-size: 18px; }
+
+.menuBarArea > div > a:hover{color:white !important;}
+
+/* topics */
+
+ .topicTitles > div > div { padding:5px;}
+
+.topicTitles > div > div > a { color:black;  font-size: 16px;  }
+
+.topHeadingTitle {padding:0;padding-top:20px; }
+
+.topHeadingTitle > span{ font-size: 24px;}
+
+.courseContainer{ margin-bottom: 10px; }
+
+/* .insideContainer{ background: rgb(239, 243, 239);} */
+
+.FooterArea{ padding:40px 0;}
+
+.FooterArea > div > a{text-decoration: none; font-size: 18px;}
+
+.advJavaList > li {list-style-type: none; padding-left: 20px;}
+
+.advJavaList > li > a { text-decoration: none; list-style-type: none; color:black;}
+
+ /*   ++++++++++++++++++++++ for mobile devices  +++++++++++++++++++++++++++   */
+
+@media only screen and (max-width: 600px) {
+  
+        .topBar{ height:20px; background: green;}
+
+        .topHeadingTitle{text-align: center; padding:0;}
+
+        /* .courseContainer{border:1px solid red;} */
+
+        .FooterArea > div  { padding:10px 0 0 10px;}
+
+        .insideContainer{ background: rgb(250, 249, 250); padding:0 50px;}
+
+        .borders{ border-top-right-radius: 20px; border-top-left-radius: 20px; }
+
+        .menuBarArea{ padding:0;}
+
+        .borders1{  border-bottom-right-radius: 0px; border:2px solid rgb(15, 180, 95);border-top: none;}
+
+        .menuBarArea > div { text-align: center; width: 100%; 
+                margin-bottom: 2px; padding:10px;}
+
+         .menuBarArea > div > a {  width: 100%; padding:0; margin:0;}
+
+          .menuBarArea > div:hover{ background: white;}
+
+          .FooterArea{ padding:10px 0;}
+}
+</pre>
+
+
+<h4 class="bg-success-subtle py-2" id="entityClass"> Entity Class </h4>
+
+<pre>
+package com.pack1;
+
+public class Customer {
+	
+	private int uid;
+	private String fname;
+	private String lname;
+	private String email;
+	private String phone;
+	private String password;
+	
+	
+	public int getUid() {
+		return uid;
+	}
+	public void setUid(int uid) {
+		this.uid = uid;
+	}
+	public String getFname() {
+		return fname;
+	}
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
+	public String getLname() {
+		return lname;
+	}
+	public void setLname(String lname) {
+		this.lname = lname;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	@Override
+	public String toString() {
+		return "Customer [uid=" + uid + ", fname=" + fname + ", lname=" + lname + ", email=" + email + ", phone="
+				+ phone + ", password=" + password + "]";
+	}
+}
+</pre>
+
+<h4 class="bg-primary-subtle py-2" id="daoClass"> DAO Class </h4>
+
+<pre>
+package com.pack1;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DAO {
+
+	public static Connection getDBconnection() {
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} 
+		catch (ClassNotFoundException e) {
+			
+			e.printStackTrace();
+		}
+		Connection conn=null;
+		try {
+			conn= DriverManager.getConnection(
+			    "jdbc:mysql://localhost:3306/icici_db", "root", "root"
+			);
+		} 
+		catch (SQLException e) {
+		
+			e.printStackTrace();
+		}
+		return conn;
+	}
+
+}
+</pre>
+
+
+<h4 class="bg-warning-subtle py-2" id="registerServlet"> Servlet / Controller / Register Servlet</h4>
+
+<pre><xmp>
+package com.pack1;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+
+@WebServlet("/MyServlet")
+public class MyServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+ 
+    public MyServlet() {
+        super();
+       
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	{
+		// TODO Auto-generated method stub
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		response.setContentType("text/html");	
+		PrintWriter output = response.getWriter();
+		
+		//output.print(" Hello Customer");
+		
+		int id = Integer.parseInt(request.getParameter("uid"));
+		String fname = request.getParameter("fname");
+		String lname = request.getParameter("lname");
+		String email = request.getParameter("email");
+		String phone = request.getParameter("phone");
+		String password = request.getParameter("pwd");
+		
+output.print(+id+" "+fname+" "+lname+" "+email+" "+phone+" "+password);
+
+		Connection conn = DAO.getDBconnection();
+		
+		
+		if(conn != null)
+		{
+			System.out.println(" DB Connected ");
+			
+	String ins_query="insert into customer values(?,?,?,?,?,?)";
+	
+	try {
+		PreparedStatement stmt  = conn.prepareStatement(ins_query);
+		
+		stmt.setInt(1,id);
+		stmt.setString(2, fname);
+		stmt.setString(3, lname);
+		stmt.setString(4, email);
+		stmt.setString(5, phone);
+		stmt.setString(6, password);
+		
+		int count = stmt.executeUpdate();
+		
+		if(count>0) 
+		{ 
+                System.out.println(" Inserted ");
+                output.print("Regstraion done successfully" );     
+                output.print("Put Login Link with anchor tag");
+		}
+		else 
+		{ 
+			System.out.println(" Not Inserted ");
+			output.print("<br/> <h1> Regstraion failed. </h1"> );
+		}
+		
+		
+	} catch (SQLException e) {
+		
+		e.printStackTrace();
+	}
+	
+			
+		}
+		else
+		{
+			System.out.println(" DB Not Connected ");
+		}
+		
+	}
+
+}
+
+</xmp></pre>
+
+<h4 class="bg-primary-subtle py-2" id="loginServlet"> Servlet / Controller / Login Servlet</h4>
+
+<pre><xmp>
+package com.pack1;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+  
+    public LoginServlet() {
+        super();
+       
+    }
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		response.setContentType("text/html");
+		PrintWriter output = response.getWriter();
+		
+		String email = request.getParameter("email");
+		String password = request.getParameter("pwd");
+		
+		//output.print("<br/><h2>"+email+" "+password+"</h2>");
+		
+		Connection conn = DAO.getDBconnection();
+		
+		if(conn != null)
+		{
+			System.out.println("DB Connected");
+			
+			String select_query="select *from customer where email=? and password=?";
+			
+			try {
+				PreparedStatement stmt = conn.prepareStatement(select_query);
+				
+				stmt.setString(1, email);
+				stmt.setString(2,password);
+				
+				ResultSet rs = stmt.executeQuery();
+				
+				if(rs.next())
+				{
+					
+					//response.sendRedirect("success.jsp");
+					
+					String user_name	=	rs.getString(2);
+					request.setAttribute("name1", user_name);
+					
+					RequestDispatcher dispatcher = request.getRequestDispatcher("success.jsp");
+			        dispatcher.forward(request, response);
+					
+					
+					System.out.println(user_name);
+				}
+				else
+				{
+					
+					RequestDispatcher rd = request.getRequestDispatcher("login.html");
+					output.println("<font color=red size=6>Email or Password is wrong.</font>");
+		            rd.include(request, response);
+				}
+				
+				
+			} catch (SQLException e) {
+			
+				e.printStackTrace();
+			}
+			
+			
+		}
+		else
+		{
+			System.out.println("DB Not Connected");
+		}
+		
+		
+		} 
+}
+
+</xmp></pre>
+
+</div>								<!-- Coding Container-->
+</div>						<!-- Coding Container's Row -->
+</div> 				<!-- Main Container-->
+
+
+</body>
+</html>

@@ -1,0 +1,273 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Boot</title>
+     <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+      <div class="container-fluid">
+        <div class="row topBar">
+            
+        </div>
+    </div>   
+     <div class="container">
+        <div class="row pt-3">
+            <div class="col-md-6 col-sm-6  ">
+                 <h1> Spring Data JPA   </h1>
+            </div>
+             <div class="col-md-6 pt-3 text-end col-sm-6"  id="homeLink">
+               <a class="h4 link-underline link-underline-opacity-0" href="../java_index.html"> Home </a>
+            </div>
+            
+        </div>
+    </div>
+<br/>
+<div class="container topics" id="allTopics">
+    <div class="row  mb-2">
+           <div class="col-md-3 col-sm-3 mb-4">
+                <a href="#hibernateIntro" class="text-decoration-none  border border-success py-2 px-3 "> JPA Intro </a>
+            </div>
+             <div class="col-md-3 col-sm-3 mb-4">
+                <a href="#orm" class="text-decoration-none border border-success  py-1 px-3"> Understanding JPA [ORM] </a>
+            </div> 
+            <div class="col-md-3 col-sm-3 mb-4">
+                <a href="#hibernateAnnotations" class="text-decoration-none border border-success py-1 px-3">  JPA Annotations </a>
+            </div> 
+            <div class="col-md-3 col-sm-3 mb-4">
+                <a href="#sampleProHibernate" class="text-decoration-none border border-success  py-1 px-3"> Sample Program of JPA </a>
+            </div>
+    </div>
+</div>
+<div class="pt-3 "> </div>
+<div class="container border border-2 border-primary p-3 ">
+
+<div class="row px-5 py-2" id="hibernateIntro">
+
+<h4 class="bg-info-subtle py-2" id="springBootIntro"> JPA Introduction </h4> 
+        
+<pre style="font-size:20px;">
+
+--> What is JPA?
+--> What is ORM Tool?
+--> JDBC Vs JPA
+
+</pre>
+
+<h4 class="bg-success-subtle py-2" id="orm"> Project Creation Process</h4> 
+        
+<pre style="font-size:20px;">
+
+<font color="red" size="4">Take below details while creating Spring Boot Data Jpa Program</font>
+
+New --> Project --> Spring Boot --> Spring Starter Project
+
+<font color="blue" size="4">Name :  SpringBootJpa1
+
+Type :  Maven
+
+Java Version : 17
+
+Group : com.wiprotech
+
+Artifact : SpringBootJpa1 (Same as Name)
+
+version : 1.0
+
+Description : Demo project for Spring Boot
+
+Package : com.wt.main</font>
+
+Now Click Next , then you get many spring boot starter but just click Finish at this movement
+
+Now your Application is Ready...
+
+
+</pre>
+
+<h4 class="bg-danger-subtle py-2" id="xmlBased"> Spring Boot JPA Required Classes</h4> 
+        
+<pre style="font-size:20px;">
+
+👉 First Properly Create Project
+
+👉 Take Depedencies 
+
+    ▶ Spring Data JPA & MySql Driver
+
+👉 Then Create Entity Class in com.wt.main.beans 
+
+👉 Now Take Repository Interface and extends with JpaRepository in com.wt.main.respository
+
+👉 Write the Data Base Configuration in applicatoin.properties 
+
+👉 Take Service package and take in com.wt.main.services
+
+    ▶ One Service Interface
+
+    ▶ then take ServiceImplementor Class and implements with Service Interface
+
+</pre>
+
+<h4 class="bg-dark py-2 text-white" id="sampleSpringBootStandAlone"> Entity Class </h4> 
+        
+<pre style="font-size:20px;">
+
+package com.jt.main.beans;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table
+public class Student {
+	
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+@Column
+private int id;
+
+@Column
+private String name;
+
+@Column
+private String dept;
+
+public int getId() {
+    return id;
+}
+public void setId(int id) {
+    this.id = id;
+}
+public String getName() {
+    return name;
+}
+public void setName(String name) {
+    this.name = name;
+}
+public String getDept() {
+    return dept;
+}
+public void setDept(String dept) {
+    this.dept = dept;
+}
+	
+}
+
+</pre>
+
+<h4 class="bg-danger py-2 text-white" id="xmlBased"> Repository Interface  </h4> 
+
+<pre style="font-size:20px;">
+
+package com.jt.main.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.jt.main.beans.Student;
+
+@Repository
+public interface StudentRepository extends JpaRepository<Student, Long>
+{
+	
+}
+
+</pre>
+
+<h4 class="bg-warning py-2 text-white" id="xmlBased"> applicatoin.properties  </h4> 
+
+<pre style="font-size:20px;">
+
+spring.application.name=03-SpringBootJPA
+
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/aa_bb
+spring.datasource.username=root
+spring.datasource.password=root
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+</pre>
+
+<h4 class="bg-danger py-2 text-white" id="xmlBased"> Service package   </h4> 
+
+<pre style="font-size:20px;">
+
+This Package Contains
+
+    ➤ Service Interface 
+
+    ➤ ServiceImplementor Class
+</pre>
+
+<h4 class="bg-dark py-2 text-white" id="xmlBased"> Service Interface   </h4> 
+
+<pre style="font-size:20px;">
+
+package com.jt.main.services;
+
+import com.jt.main.beans.Student;
+
+public interface StudentService {
+	
+	public boolean addStudentDetails(Student std);
+	
+}
+
+</pre>
+
+<h4 class="bg-success py-2 text-white" id="xmlBased"> ServiceImplementor Class  </h4> 
+
+<pre style="font-size:20px;">
+
+package com.jt.main.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.jt.main.beans.Student;
+import com.jt.main.repository.StudentRepository;
+
+
+@Service
+public class ServiceImplementor implements StudentService{
+
+@Autowired
+private StudentRepository studentRepo;
+
+@Override
+public boolean addStudentDetails(Student std) {
+    
+boolean status = false;
+
+try
+{
+    studentRepo.save(std);
+    status=true;
+}
+catch(Exception ex)
+{
+    ex.printStackTrace();
+    status=false;
+}
+
+return status;
+}
+
+}
+
+</pre>
+
+
+</div>
+</div>
+
+</body>
+</html>

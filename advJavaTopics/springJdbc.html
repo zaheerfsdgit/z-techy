@@ -1,0 +1,444 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring JDBC </title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row topBar">
+            
+        </div>
+    </div>   
+     <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6  ">
+                 <h1> Spring JDBC with Maven</h1>
+            </div>
+             <div class="col-md-6 pt-3 text-end col-sm-6">
+               <a class="h4 link-underline link-underline-opacity-0" href="../java_index.html"> Home </a>
+            </div>
+            
+        </div>
+    </div>
+    
+<br/>
+<div class="container topics">
+    <div class="row  mb-2">
+           <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#springJdbcModule" class="text-decoration-none  border border-success py-2 px-3 "> Spring JDBC Module</a>
+            </div>
+
+             <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#driverManagerDataSource" class="text-decoration-none border border-success  py-1 px-3"> Driver Manager Data Source </a>
+            </div> 
+            
+            <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#jdbcTemplate" class="text-decoration-none border border-success py-1 px-3">  JDBC Template </a>
+            </div> 
+
+             <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#namedParameter" class="text-decoration-none border border-success py-1 px-3">  Named Parameter JDBC Template </a>
+            </div> 
+
+           
+            <div class="col-md-4 col-sm-4 mb-3">
+                <a href="#sampleSpringJdbcProgram" class="text-decoration-none border border-success py-1 px-3">  Sample Spring JDBC Program </a>
+            </div> 
+</div>
+
+<div class="pt-3 "> </div>
+<div class="container border border-2 border-primary p-3 ">
+
+<div class="row px-5 py-2" >
+
+<h4 class="bg-success py-2 text-white" id="springJdbcModule"> Spring JDBC Module </h4> 
+        
+<pre style="font-size:20px;">
+
+Spring framework provides Spring JDBC Module 
+to connect Spring Application
+with Data Base using JDBC.
+
+Spring JDBC Module Internally use "JDBC API".
+
+Spring JDBC Module provides 3 Classes for Data Base Connection
+and to perform Data Base Operations.
+
+<font color="blue">They are: </font>
+ -- DriverManagerDataSource
+ -- JdbcTemplate
+ -- NamedParameterJdbcTemplate
+
+</pre>
+
+</div>
+</div>
+
+<div class="pt-3 "> </div>
+<div class="container border border-2 border-primary p-3 ">
+
+<div class="row px-5 py-2" >
+
+<h4 class="bg-warning py-2 text-dark" id="driverManagerDataSource"> DriverManagerDataSource </h4> 
+        
+<pre style="font-size:20px;">
+
+DriverManagerDataSource is a class.
+    -- It is an implemented class of "DataSource" Interface.
+    [DataSource is present in javax.sql package]
+
+<font color="blue">It is used for:</font>
+ -- DataBase Configuration
+ -- Driver Loading
+ -- Connection creation
+
+</pre>
+
+</div>
+</div>
+
+<div class="pt-3 "> </div>
+<div class="container border border-2 border-primary p-3 ">
+
+<div class="row px-5 py-2" >
+
+<h4 class="bg-danger py-2 text-white" id="jdbcTemplate"> JdbcTemplate class </h4> 
+        
+<pre style="font-size:20px;">
+
+-- It is the central class in Spring-JDBC module.
+-- It is used to perform database operations [CRUD Operations]
+-- Methods of JdbcTemplate
+
+<font color="blue">1. update() </font>
+ -- above method is used for insert, update and delete SQL queries.
+ <font color="blue">
+ 2. query() 
+    queryForList()
+    queryForMap()
+    queryForObject()
+    queryForRowSet()
+ </font>
+ -- above method is used for select SQL queries.
+
+</pre>
+
+</div>
+</div>
+
+<div class="pt-3 "> </div>
+<div class="container border border-2 border-primary p-3 ">
+
+<div class="row px-5 py-2" >
+
+<h4 class="bg-success py-2 text-white" id="namedParameter"> Named Parameter JDBC Template </h4> 
+        
+<pre style="font-size:20px;">
+
+-- Named Parameter JDBC Template - used to perform Data Base Operations.
+
+<font color="red">The NamedParameterJdbcTemplate in Spring Framework 
+is a powerful tool for interacting with relational databases, 
+offering enhanced readability and maintainability compared to the 
+traditional JdbcTemplate.
+ </font>
+
+ -- above method is used for select SQL queries.
+
+</pre>
+
+</div>
+</div>
+
+
+<div class="pt-3 "> </div>
+<div class="container border border-2 border-primary p-3 ">
+<div class="row px-5 py-2" >
+
+<h4 class="bg-warning py-2 text-dark" id="springJdbcProcess"> Spring JDBC Process </h4> 
+        
+<pre style="font-size:20px;">
+
+<font color="blue">Pre requisites for Spring JDBC </font>
+
+1.  Take a Maven Project & provide below details: 
+
+    -- Group Id         => com.tataservices
+    -- Artifact Id      => SpringCrudOperations [Project Name]
+    -- Version          => 1.0
+    -- Package          => com.ts.main 
+    [ Base Package Name - you get App.java Default Java File]
+
+2.  Now Copy the below Dependencies [From MVN Repository] and pate in POM.XML:
+
+    -- Spring Context 
+    [this single dependancy add basic all jars for spring Framework]
+
+    -- Spring JDBC
+
+    -- MySql Jar
+
+</pre>
+
+</div>
+</div>
+
+<div class="pt-3 "> </div>
+<div class="container  p-3 ">
+<div class="row  py-2" >
+<h4 class="bg-warning py-2" id="sampleSpringJdbcProgram"> Sample Program of Spring JDBC with Maven  </h4> 
+</div>
+</div>
+
+<div class="pt-3 "> </div>
+<div class="container border border-2 border-primary p-3 ">
+<div class="row px-5 py-2" >
+<h4 class="bg-info-subtle py-2" id="xmlBased"> Spring JDBC with Maven Required Classes </h4> 
+        
+<pre style="font-size:20px;">
+
+<a href="" style="text-decoration: none;" > POM.XML to Add Dependencies </a>
+
+<a href="" style="text-decoration: none;"> Spring Config / to Create Beans and to Inject -- com.ts.config [ config package ] </a>
+
+<a href="" style="text-decoration: none;"> App.Java as Controller / Main Class  -- com.ts.main [ By Default package comes aling wiht App.java ]</a>
+
+<a href="" style="text-decoration: none;"> Row Mapper Class as Mapper / -- com.ts.mapper </a>
+</pre>
+
+</div>
+</div>
+
+<div class="pt-3 "> </div>
+<div class="container border border-2 border-primary p-3 ">
+<div class="row px-5 py-2" >
+<h4 class="bg-success-subtle py-2"> POM.XML to Add Dependencies  </h4> 
+<pre style="font-size:20px;"> 
+<b style="color:blue;">Go to MVN Repository</b>
+
+-- Spring Context Dependency
+-- Spring Jdbc Dependancy
+-- MySQL Connector/J
+<xmp>
+<dependencies>
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context</artifactId>
+    <version>6.2.11</version>
+</dependency>
+
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-jdbc</artifactId>
+    <version>6.2.11</version>
+</dependency>
+
+<dependency>
+    <groupId>com.mysql</groupId>
+    <artifactId>mysql-connector-j</artifactId>
+    <version>8.3.0</version>
+</dependency>
+
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>3.8.1</version>
+    <scope>test</scope>
+</dependency>
+</dependencies>
+</xmp>
+</pre>  
+
+</div>
+</div>
+
+<div class="pt-3 "> </div>
+<div class="container border border-2 border-primary p-3 ">
+<div class="row px-5 py-2" >
+<h4 class="bg-info-subtle py-2"> SpringConfig.java - com.ts.config / to Create Beans and to Inject   </h4> 
+<pre style="font-size:20px;"> 
+package com.ts.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+@Configuration
+public class SpringConfig {
+	
+@Bean
+public DriverManagerDataSource myDataSource()
+{
+    
+    DriverManagerDataSource dataSource = new DriverManagerDataSource();
+    
+    dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+    dataSource.setUrl("jdbc:mysql://localhost:3306/zzz");
+    dataSource.setUsername("root");
+    dataSource.setPassword("root");
+    
+    return dataSource;
+}
+
+@Bean
+public JdbcTemplate myJdbcTemplate()
+{
+    JdbcTemplate jdbcTemplate = new JdbcTemplate();
+    jdbcTemplate.setDataSource(myDataSource());
+
+    return jdbcTemplate;
+}
+}
+
+</pre>  
+
+</div>
+</div>
+
+<div class="pt-3 "> </div>
+<div class="container border border-2 border-primary p-3 ">
+<div class="row px-5 py-2" >
+<h4 class="bg-warning-subtle py-2"> App.Java as Controller / Main Class / to do Crud Operations   </h4> 
+<pre style="font-size:20px;"> 
+package com.ts.main;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.ts.config.SpringConfig;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello World!" );
+        
+        @SuppressWarnings("resource")
+		ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+        
+JdbcTemplate jdbcTemp = (JdbcTemplate) context.getBean("myJdbcTemplate");
+
+OR
+
+JdbcTemplate jdbcTemplate =  context.getBean(JdbcTemplate.class);
+ 
+                
+    <font size="4" color="red">----------- Insertion Process ------------ </font>
+       
+        int sid = 108;
+        String sname = "Naveen";
+
+        String insert_query = "Insert into students values(?,?)";
+        int count = jdbcTemp.update(insert_query,sid,sname);
+        
+        if(count > 0)
+        {
+        	System.out.println("Insertion Success");
+        }
+        else
+        {
+        	System.out.println("Insertion Failed");
+        }
+
+    <font size="4" color="red">----------- Updation Process ------------ </font>
+       
+        String updata_sname = "HeMan";
+        int update_sid = 108;
+        
+        
+        String update_query = "Update students set sname = ? where sid = ?";
+        
+        int ucount = jdbcTemp.update(update_query,updata_sname,update_sid);
+        
+        if(ucount > 0)
+        {
+        	System.out.println("Updation Success");
+        }
+        else
+        {
+        	System.out.println("Updation Failed");
+        }
+
+    <font size="4" color="red">----------- Delete Process ------------ </font>
+       
+        int del_sid = 103;
+        
+        String del_query = "delete from students where sid = ?";
+        
+        int dcount = jdbcTemp.update(del_query,del_sid);
+        
+        if(dcount > 0)
+        {
+        	System.out.println("Deleted Success");
+        }
+        else
+        {
+        	System.out.println("Deletion Failed");
+        }
+        
+<font size="4" color="red">----------- Fetch All Records ------------ </font>
+       
+<xmp>String select_query = "select *from students";    
+    List<Employee> std_list = jdbcTemp.query(select_query,new StudentRowMapper());
+        
+    // for select query we need to create bean class that is Employee class
+    // we need to create a "employee row mapper" class also
+    // and that employee row mapper class inherited by RowMapper interface
+    // then we need to implement mapRow method (over riding from RowMapper)
+    // and method mapRow method return student object/bean
+    // every time a new student object create and it hits to data base
+    // and fetch respective record and store in result from data base directly
+        
+    for(Student std:std_list)
+    {
+        System.out.println(std);
+    }
+
+    }
+}
+</xmp>
+</pre>  
+
+<div class="pt-3 "> </div>
+<div class="container border border-2 border-primary p-3 ">
+<div class="row px-5 py-2" >
+<h4 class="bg-danger-subtle py-2"> StudentRowMapper.java as a Mapping class / com.ts.mapper    </h4> 
+<pre style="font-size:20px;"> 
+
+package com.ts.mapper;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.springframework.jdbc.core.RowMapper;
+
+import com.ts.bean.Student;
+
+public class StudentRowMapper implements RowMapper<Student>{
+
+	@Override
+	public Student mapRow(ResultSet rs, int rowNum) throws SQLException {
+		
+		Student stu = new Student();
+		
+		stu.setSid(rs.getInt(1));
+		stu.setSname(rs.getString(2));
+		
+		return stu;
+	}
+
+}
+
+</pre>
+
+
+</div>
+</div>
+
+</body>
+</html>

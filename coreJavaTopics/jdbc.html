@@ -1,0 +1,219 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JDBC</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    
+<div class="container">
+<div class="row">
+	<div class="col-md-6 col-sm-6  ">
+			<h1> JDBC Connection </h1>
+	</div>
+		<div class="col-md-6 pt-3 text-end col-sm-6" id="homeLink">
+		<a class="h4 link-underline link-underline-opacity-0" href="../java_index.html"> Home </a>
+	</div>
+	
+</div>
+</div>
+
+     <br/>
+<div class="container topics" id="allTopics">
+	<div class="row  mb-2" >
+
+	<div class="col-md-2 col-sm-2 mb-4 ">
+		<a href="#jdbcProcess" class=" text-decoration-none  border border-success py-2 px-3 "> JDBC Process  </a>
+	</div>
+
+	<div class="col-md-2 col-sm-2 mb-4">
+		<a href="#entityClass" class="text-decoration-none  border border-success py-2 px-3 "> Entity Class  </a>
+	</div>
+
+	<div class="col-md-2 col-sm-2 mb-4">
+		<a href="#daoClass" class="text-decoration-none  border border-success py-2 px-3 "> DAO Class  </a>
+	</div>
+
+	<div class="col-md-2 col-sm-2 mb-4">
+		<a href="#controllerClass" class="text-decoration-none  border border-success py-2 px-3 "> Controller  </a>
+	</div>
+
+	</div>
+
+<div class="pt-3 "> </div>
+<div class="container border border-2 border-primary p-3 ">
+
+<div class="row px-5 py-2" id="jdbcProcess">
+
+<h4 class="bg-success-subtle py-2">JDBC Process </h4> 
+        
+<pre>
+
+In Java, an ArrayList is a resizable array implementation of the List interface, 
+found within the java.util package. It provides a dynamic array that can grow or shrink 
+in size as elements are added or removed, unlike traditional arrays which have a fixed size. 
+</pre>
+
+<h4 class="bg-danger-subtle py-2">  JDBC Pre Requisite Softwares </h4>
+
+<pre>
+
+Install JDK
+
+Install MySql
+
+Install MySql Connetor
+
+</pre>
+
+<h4 class="bg-info-subtle py-2">  Required Classes for JDBC  </h4>
+
+<pre>
+
+Entity Class
+
+DAO Class / Data Base Connection Class
+
+Controller
+
+</pre>
+
+<h4 class="bg-success-subtle py-2" id="entityClass">  Entity Class Program  </h4>
+
+<pre>
+
+package com.database;
+
+public class Employee {
+	
+private int eid;
+private String ename;
+private String desig;
+
+public void setEid(int eid) {
+	this.eid = eid;
+}
+public void setEname(String ename) {
+	this.ename = ename;
+}
+public void setDesig(String desig) {
+	this.desig = desig;
+}
+
+public int getEid() {
+	return eid;
+}
+public String getEname() {
+return ename;
+}
+public String getDesig() {
+	return desig;
+}
+@Override
+public String toString() {
+	return " eid=" + eid + ",\n ename=" + ename + ",\n desig=" + desig;
+}
+}
+
+</pre>
+
+<h4 class="bg-warning-subtle py-2" id="daoClass"> DAO Class  </h4>
+
+<pre>
+
+package com.database;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DAO {
+
+public static Connection getDbConnect() {
+	
+try {
+	Class.forName("com.mysql.cj.jdbc.Driver");
+} 
+catch (ClassNotFoundException e) {
+	
+	e.printStackTrace();
+}
+Connection conn=null;
+try {
+	conn= DriverManager.getConnection(
+		"jdbc:mysql://localhost:3306/zdatabase", "root", "root"
+	);
+} 
+catch (SQLException e) {
+
+	e.printStackTrace();
+}
+		
+return conn;
+}
+
+}
+</pre>
+
+<h4 class="bg-primary-subtle py-2" id="controllerClass"> Controller Class  </h4>
+
+<pre>
+package com.database;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class Controller {
+
+public static void main(String[] args) throws SQLException {
+
+Employee emp1  = new Employee(103,"Raju","Lead Developer");
+
+//emp1.setEid(102);
+//emp1.setEname("Jerry");
+//emp1.setDesig("Tester");
+
+System.out.println(emp1);
+
+Connection conn = DAO.getDbConnect();
+
+if(conn != null)
+{
+	System.out.println("DB Connected");
+	
+	String ins_query = "insert into employee1 values(?,?,?)";
+	PreparedStatement stmt = conn.prepareStatement(ins_query);
+	stmt.setInt(1, emp1.getEid());
+	stmt.setString(2, emp1.getEname());
+	stmt.setString(3, emp1.getDesig());
+	int i = stmt.executeUpdate();
+	if(i>0)
+	{
+		System.out.println("Inserted Successfully.");
+	}
+	else
+	{
+		System.out.println("Not Inserted.");
+	}
+}
+else
+{
+	System.out.println("DB Not Connected");
+}
+		
+}
+
+}
+
+// DB connection, Insert query through setter and constructor
+// and table without primary and and with primary key
+
+</pre>
+</div>								<!-- Coding Container-->
+</div>						<!-- Coding Container's Row -->
+</div> 				<!-- Main Container-->
+</body>
+</html>

@@ -1,0 +1,1258 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Boot</title>
+     <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+      <div class="container-fluid">
+        <div class="row topBar">
+            
+        </div>
+    </div>   
+     <div class="container">
+        <div class="row pt-3">
+            <div class="col-md-6 col-sm-6  ">
+                 <h1> 🌱 Spring Boot </h1>
+            </div>
+             <div class="col-md-6 pt-3 text-end col-sm-6" id="homeLink">
+               <a class="h4 link-underline link-underline-opacity-0" href="../java_index.html"> Home </a>
+            </div>
+            
+        </div>
+    </div>
+<br/>
+<div class="container topics" id="allTopics">
+    <div class="row  mb-2">
+           <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#springBootIntro" class="text-decoration-none  border border-success py-2 px-3 "> Spring Boot Introduction </a>
+            </div>
+             <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#principles" class="text-decoration-none border border-success  py-1 px-3"> Core Principles of Spring Boot</a>
+            </div> 
+            <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#usesOfspringBoot" class="text-decoration-none border border-success py-1 px-3">  Use of Spring Boot </a>
+            </div> 
+            <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#springBootStarters" class="text-decoration-none border border-success  py-1 px-3"> Spring Boot Starters </a>
+            </div>
+
+            <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#springBootStarters" class="text-decoration-none border border-success  py-1 px-3"> application.properties </a>
+            </div>
+             <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#springBootStarters" class="text-decoration-none border border-success  py-1 px-3"> Spirng Boot Auto Configuration  </a>
+            </div>
+
+            <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#springBootStarters" class="text-decoration-none border border-success  py-1 px-3"> Dispatch Servlet Auto Configuration  </a>
+            </div>
+
+            <div class="col-md-3 col-sm-3 mb-2">
+                <a href="#springBootStarters" class="text-decoration-none border border-success  py-1 px-3">  Conditional Annotations  </a>
+            </div>
+
+            <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#springBootStarters" class="text-decoration-none border border-success  py-1 px-3">  META-INF -> Spring.Factories  </a>
+               
+            </div>
+
+            <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#springBootApplicaiton" class="text-decoration-none border border-success  py-1 px-3"> @SpringBootAppliatoin Annotation </a>
+        
+            </div>
+
+            <div class="col-md-2 col-sm-2 mb-3">
+                <a href="#springBootApplicaiton" class="text-decoration-none border border-success  py-1 px-3"> Run [Static Method] </a>
+                <!-- Run is Static Method in Spring Boot Applicatoin-->
+            </div>
+
+             <div class="col-md-2 col-sm-2 mb-3">
+                <a href="#springBootApplicaiton" class="text-decoration-none border border-success  py-1 px-3"> @Configuation </a>
+            </div>
+
+            <div class="col-md-2 col-sm-2 mb-3">
+                <a href="#springBootApplicaiton" class="text-decoration-none border border-success  py-1 px-3"> @Bean </a>
+            </div>
+
+            <div class="col-md-3 col-sm-3 mb-3">
+                <a href="#springBootApplicaiton" class="text-decoration-none border border-success  py-1 px-3"> CommandLineRunner Interface </a>
+            </div>
+            <div class="col-md-3 col-sm-3 mb-4">
+                <a href="#springBootStarters" class="text-decoration-none border border-success  py-1 px-3"> Convention Over Configuration </a>
+                
+            </div>
+
+            <div class="col-md-6 col-sm-6 mb-4">
+                <a href="#sampleSpringBootStandAlone" class="text-decoration-none border border-success  py-1 px-3"> Sample Program  - Stand Alone Project</a>
+                <!--  Do not choose any depepndencies while creation of Project -->
+            </div>
+            
+              <div class="col-md-4 col-sm-4 mb-4">
+                <a href="#sampleSpringBootWebApp" class="text-decoration-none border border-success  py-1 px-3"> Sample Program - Web Application Project</a>
+                <!-- Just Choose Spring Web MVC depepndencies while creation of Project -->
+            </div>
+
+
+            <div class="col-md-3 col-sm-3 mb-4">
+                <a href="#springBootJdbc" class="text-decoration-none border border-success  py-1 px-3"> Spring Boot Jdbc Process</a>
+                
+            </div>
+             <div class="col-md-3 col-sm-3 mb-4">
+                <a href="#springBootStarters" class="text-decoration-none border border-success  py-1 px-3"> Web MVC Project Structure</a>
+                <!-- Static, Template & application.properties-->
+            </div>
+    </div>
+</div>
+<div class="pt-3 "> </div>
+<div class="container border border-2 border-primary p-3 ">
+
+<div class="row px-5 py-2" id="dataWriting">
+
+<h4 class="bg-info-subtle py-2" id="springBootIntro"> Introduction of Spring Boot </h4> 
+        
+<pre style="font-size:20px;">
+
+--> What is Spring Boot?
+--> Core Principles of Spring Boot
+--> Use of Spring Boot
+
+</pre>
+
+<h4 class="bg-success-subtle py-2" id="springIntro"> What is Spring Boot? </h4> 
+        
+<pre style="font-size:20px;">
+
+Spring Boot is an Open-Source Framework
+built on top of the Spring Framework for Java 
+Developers.
+
+<b>Need to understanding of these spring frame work topcs.</b>
+
+ -- Beans
+ -- life cycle of Beans
+ -- Ioc
+ -- Dependencies
+ -- Application Context
+ -- GetBean Method
+ -- DI
+ -- AutoWiring
+ -- Annotations
+ -- Spring jdbc
+ -- Spring MVC Module
+
+Spring Boot was developedby Pivotal Software (Acquired by VMWare), It was first released in 2014.
+
+In Spring Boot, 'Boot' refers to the concept of rapidly initiating a spring application 
+by handling all essestials set ups and configuratios.
+
+Spring Boot makes building Spring applications easier and faster.
+
+</pre>
+
+<h4 class="bg-primary-subtle py-2" id="principles"> Core Principles of Spring Boot </h4> 
+        
+<pre style="font-size:20px;">
+
+<font color="red">-- Opinionated Defaults </font>
+
+    It means, Spring Boot Internally handled the build tools like Maven or Gradle.
+
+    and while we create the project we can specify required dependencies as per 
+    our project requirement, then spring boot internally add all depependacies.
+
+    and coming to all basic setups also taken care by spring bootl like
+    project structure also spring boot will create internally.
+
+    and It also simplifies the basic configurations by providing "application.properties".
+
+    ** [Appliation.properties file used to provide the configuration in Spring Boot appliation,
+    This file replaces the need of spring configuration like mydps-servlet.xml file ]
+
+<font color="red">-- Convention Over Configuration </font>
+
+    It means, it we follow certain established patterns or conventions, we can achieve a lot
+    without needing to explicitly configure everything.
+
+    And it is achieved by Annotataionls, Example We use @RestController for creating RESTful
+    API's, @Service for service layers, or organizing our code into specific subpackages to 
+    enable automatic Scanning.
+
+<font color="red">-- Auto Configurations </font>
+
+    It means, setting up components and settings automatically based on project dependencies.
+    For Example, Including spring-web configures essestials like the dispatcher servlet and view
+    resolver for web apps, eliminating manual setup and letting developers focus on coding
+    instead of infrastructure. 
+
+<font color="red">-- Embedded Servers </font>
+
+    In Spring Boot Server has been embedded internally, no need to configure from out end.
+    While using spring framework we face server version conflicts, so that Spring boot
+    remove these isssues by embedded the server.
+
+</pre>
+
+<h4 class="bg-warning-subtle py-2" id="usesOfspringBoot"> Uses of Spring Boot </h4> 
+        
+<pre style="font-size:20px;">
+
+ -- Web Application
+ -- Restful Web Services
+ -- Micro Servcies
+ -- Batch processing
+ -- Integration with other Technologies
+ -- Testing 
+ -- Monitoring and Management
+
+</pre>
+
+<h4 class="bg-success-subtle py-2" id="springBootStarters"> Spring Boot Starters</h4> 
+        
+<pre style="font-size:20px;">
+
+ <font color="red">-- Understanding Spring Boot Starters </font>
+
+    Spring Boot Starters are the "Dependancy Discriptors"
+
+    Dependancy -- Expternal libraries or JARs.
+    Descriptor -- Configuration specifying JARs and thier videos.
+
+    ** Spring Boot Starters combine all necessary libraries (JAR files) for a 
+    particular feature or technology into a single dependancy.
+
+    It means, you will use only one Dependancy but it includes many JAR files. 
+
+    For Example: Spring-Boot-Starter-Web Dependancy contains many jar files like
+
+    -- Web App
+    -- web.jar 
+    -- web-mvc.jar 
+    -- validation.jar 
+    -- tomcat.jar 
+    -- logging.jar 
+    etc
+
+ <font color="red">-- Uses of Spring Boot Starters </font>
+
+    <b>Simplifies Configuration : </b>Statters automatically include the right libraries and settings 
+    we need, so that we write code faster.
+
+    <b>Boost Productivity : </b>Saves time and Productivity by providing sensible defaults and configurations,
+    allowing developers to focus on writing business logic rather than managing dependies.
+
+    <b>Ensures Compatability : </b>Ensures that all included depenencies  are compatible with each other and 
+    the Spring Boot version being used, reducing the risk of conflicts.
+    
+ <font color="red">-- Important Spring Boot Starters </font>
+
+     <font color="red">1. spring-boot-starter</font>
+
+        It is the core starter that includes auto-configruring spport, logging, And YAML processing.
+
+     <font color="red">2. spring-boot-starter-web</font>
+
+        It provides dependencies to build web applications, including Spring MVC, RESTful services, 
+        and embedded Tomcat.
+
+     <font color="red">3. spring-boot-starter-data-jpa</font>
+
+         It provides dependencies for Spring Data JPA, Hibernate and Database connection pool.
+
+     <font color="red">4. spring-boot-starter-security</font>
+
+        It inlcudes Spring Security and its dependencies for securing applications.
+
+     <font color="red">5. spring-boot-starter-thymeleaf</font>
+
+        It inegerates the Thymeleaf templating engine with Spring MVC.
+
+     <font color="red">6. spring-boot-starter-test</font>
+
+        It includes testing libraries like JUnit, Hamcrest, and Mockito.
+
+     <font color="red">7. spring-boot-starter-actuator</font>
+
+        It provides production-ready features to help monitor and manager your appliatoin,
+        including health checks and metrics.
+
+     <font color="red">8. spring-boot-starter-aop</font>
+
+        It brings in support for aspect-oriented programming using Spring AOP and AspectJ.
+
+</pre>
+
+<h4 class="bg-danger-subtle py-2" id="xmlBased"> Spring Boot Environment to write a program </h4> 
+        
+<pre style="font-size:20px;">
+
+        <font color="red" size="4">We need Spring boot environement to write Spring Boot Code.</font>
+
+        Download from Eclipse Market place 
+
+        Downlaod and Install STS Tool from Browser
+
+        Go to Spring Initialzer Web Site and Create Spring Boot Application Online.
+
+</pre>
+
+<h4 class="bg-info-subtle py-2" id="sampleSpringBootStandAlone"> Spring Boot Sample Program Process - Stand Alone</h4> 
+        
+<pre style="font-size:20px;">
+
+<font color="red" size="4">Take below details while creating Spring Boot Program</font>
+
+New --> Project --> Spring Boot --> Spring Starter Project
+
+<font color="blue" size="4">Name :  SpringBootProject1
+
+Type :  Maven
+
+Java Version : 17
+
+Group : com.digitalscript
+
+Artifact : SpringBootProject1 (Same as Name)
+
+version : 1.0
+
+Description : Demo project for Spring Boot
+
+Package : com.ds.main</font>
+
+Now Click Next , then you get many spring boot starter but just click Finish at this movement
+
+Now your Application is Ready...
+
+</pre>
+
+<h4 class="bg-danger py-2 text-white" > Spring Boot Sample Program - Stand Alone Application </h4> 
+        
+<pre style="font-size:20px;">
+
+package com.ds.main;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+<b>@SpringBootApplication</b>
+public class SpringBootProject1Application {
+
+public static void main(String[] args) {
+    SpringApplication.run(SpringBootProject1Application.class, args);
+    
+    System.out.println(" My First Spring Boot App - Desktop");
+}
+
+}
+
+<h4 class="text-danger" id="springBootApplicaiton">Understanding @SpringBootApplicaiton Annotation @Bean Annotation 
+& CommandLineRunner Intreface and  run method </h4><font size="4" color="black">
+
+<u>@SpringBootApplication</u> Annotation provides setup and configurations 
+for our Spring Boot Applicatoin  And<span style="background:yellow;">
+     this annotation is the combination of below three annotations    </span>
+
+<b style="color:green;">    @SpringBootConfiguration [ inside it has @Configurtaion ]
+    and @ComponentScan 
+    and @EnableAutoConfiguration </b>    
+
+And It acts as a Entry point for Sprong boot applicatoin 
+
+<u>@Bean</u> in a @Configuration class tells Spring how to create a specific object. Spring calls 
+these methods during startup, registring their returned objects as beans for later use.
+
+<u>@CommandLineRunner Interfce </u> it is used to execute code ater the Spring Application Context
+is initialized. It allows us to run additional tasks or setup logic at startup...
+
+<u>run method</u> initializes out spring Applicaiton [It Setups the Spring App ] 
+it performs All Auto Configuration and Many more..</font>    
+
+</pre>
+
+<h4 class="bg-primary py-2 text-white" id="sampleSpringBootWebApp"> Spring Boot Sample Program - Web Application </h4> 
+<pre><font size="4">
+-- Check Pom.xml
+-- Applicaton.java => in base package => com.tm.main
+-- application.properties 
+-- MyController.java --> Create New Package --> then create a class and named as MyController
+
+-- take "Spring Web" Dependancy while creating project  
+
+<font color="red">[package name should be com.tm.main.controller ]</font>
+
+*** other wise your get "White Label Error" ===> Whitelabel Error Page
+</font>
+</pre>
+
+<h4 class="bg-dark py-2 text-white" id="xmlBased"> pom.xml </h4> 
+
+<pre style="font-size:20px;">
+<xmp><dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+</xmp></pre>
+
+<h4 class="bg-info py-2 text-white" id="xmlBased"> application.properties  </h4> 
+<pre style="font-size:20px;">
+spring.application.name=02-SpringBootProject
+server.port=8081
+</pre>
+
+<h4 class="bg-success py-2 text-white" id="xmlBased"> Application.java </h4> 
+
+<pre style="font-size:20px;">
+
+package com.ds.main;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+<b>@SpringBootApplication</b>
+public class SpringBootProject1Application {
+
+public static void main(String[] args) {
+    SpringApplication.run(SpringBootProject1Application.class, args);
+    
+    System.out.println(" My First Spring Boot App - Desktop");
+}
+
+}
+
+</pre>
+
+<h4 class="bg-warning py-2 text-black" id="xmlBased"> MyController.java </h4> 
+
+<pre style="font-size:20px;">
+
+package com.vt.main.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class MyController {
+	
+	@GetMapping("/")
+	@ResponseBody
+	public String printHello()
+	{
+		return "Hello Zaheer - Spring Boot Web Application";
+	}
+
+}
+
+</pre>
+
+
+<h4 class="bg-primary py-2 text-white" id="xmlBased"> @Bean & CommandLineRunner interface - Sample Program</h4> 
+
+<pre style="font-size:20px;">
+
+    @Bean Annotatoin and CommandLineRunner Interface apply
+
+    Applicaiton.java -- Creating Beans here
+    MyClass.java 
+
+</pre>
+
+
+<h4 class="bg-danger-subtle py-2 text-dark" id="xmlBased"> Applicaiton.java   </h4> 
+
+<pre style="font-size:20px;">
+
+package com.ct.main;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+@SpringBootApplication
+public class Application implements CommandLineRunner{
+
+	public static void main(String[] args) 
+	{
+		SpringApplication.run(Application.class, args);
+		
+		System.out.println(" Beans And Configurations From Main..");
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+
+	 myClass().printMessage("Zaheer");
+		
+	}
+	
+	@Bean
+	public MyClass myClass()
+	{
+		
+		return new MyClass();
+	}
+
+}
+</pre>
+
+<h4 class="bg-primary-subtle py-2 text-dark" id="xmlBased"> MyClass.java   </h4> 
+
+<pre style="font-size:20px;">
+
+package com.ct.main;
+
+
+public class MyClass {
+	
+	public void printMessage(String name) 
+	{
+		System.out.println(" Hello : "+name);
+	}
+
+}
+
+</pre>
+
+<h4 class="bg-warning py-2 text-black" id="xmlBased"> @Bean & CommandLineRunner with Entity Class. </h4> 
+
+<pre style="font-size:20px;">
+
+    @Bean Annotatoin and CommandLineRunner Interface apply
+
+   1. Main package --> com.st.main --> Applicaiton.java -- Creating Beans here
+   
+   [We do Configuratoin task in Application.java file, why because @springBootApplicatoin 
+   Annotatoin contains @Configuration annotation too, but it is not a good practice,
+   we have to take configuration separte class and perform there Configuration and Bean
+   Creations task separatly instead of in main method.]
+
+   [ In next program we do like that, but as of now we do beans configuration in main methods only.]
+   
+   2. Another Package --> com.st.main.beans --> Student.java 
+    ==> In Student Class create properties and getter & setter and constructor 
+    -- and display method
+
+</pre>
+
+<h4 class="bg-danger-subtle py-2 text-dark" id="xmlBased"> Applicaiton.java   </h4> 
+
+<pre style="font-size:20px;">
+
+package com.st.main;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.st.main.beans.Student;
+
+@SpringBootApplication
+public class Application implements CommandLineRunner
+{
+
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+		
+		System.out.println("hello dear");
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+
+		studentBean1().displayStuData();
+		System.out.println("------------------");
+		studentBean2().displayStuData();
+	}
+	
+	public Student studentBean1()
+	{
+		return new Student(101, "Kiran","CSE");
+	}
+	
+	public Student studentBean2()
+	{
+		return new Student(102, "Raju","ECE");
+	}
+
+
+}
+</pre>
+
+<h4 class="bg-primary-subtle py-2 text-dark" id="xmlBased"> Entity Class - Student.java   </h4> 
+
+<pre style="font-size:20px;">
+
+package com.st.main.beans;
+
+public class Student {
+
+	private int sid;
+	private String sname;
+	private String dept;
+	
+	
+	public Student(int sid, String sname, String dept) {
+		super();
+		this.sid = sid;
+		this.sname = sname;
+		this.dept = dept;
+	}
+	
+	public int getSid() {
+		return sid;
+	}
+	public void setSid(int sid) {
+		this.sid = sid;
+	}
+	public String getSname() {
+		return sname;
+	}
+	public void setSname(String sname) {
+		this.sname = sname;
+	}
+	public String getDept() {
+		return dept;
+	}
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+	
+	public void displayStuData()
+	{
+		System.out.println(sid+" "+sname+" "+dept);
+	}
+	
+}
+</pre>
+
+<h4 class="bg-info py-2 text-black" id="xmlBased"> @Bean & CommandLineRunner in Separate Configuration Class </h4> 
+
+<pre style="font-size:20px;">
+
+    @Bean Annotatoin and CommandLineRunner Interface in Cofiguration Package 
+
+   1. Main package --> com.st.main --> Applicaiton.java 
+   
+   2. Another Package --> com.st.main.beans --> Student.java 
+    ==> In Student Class create properties and getter & setter and constructor 
+    -- and display method
+
+    3. Another Package --> com.st.main.config --> AppConfig.java 
+    ==> Beans creation and CommandLineRunner interface 
+
+</pre>
+
+<h4 class="bg-danger-subtle py-2 text-dark" id="xmlBased"> Applicaiton.java   </h4> 
+
+<pre style="font-size:20px;">
+
+package com.et.main;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Application{
+
+public static void main(String[] args) {
+    SpringApplication.run(Application.class, args);
+    
+    //System.out.println(" hello sb");
+}
+
+}
+</pre>
+
+<h4 class="bg-danger-subtle py-2 text-dark" id="xmlBased"> Entity Class - Employee.java   </h4> 
+
+<pre style="font-size:20px;">
+
+package com.et.main.beans;
+
+public class Employee {
+	
+	private int eid;
+	private String ename;
+	private int salary;
+	private float comm;
+	
+	public Employee(int eid, String ename, int salary, float comm) {
+		super();
+		this.eid = eid;
+		this.ename = ename;
+		this.salary = salary;
+		this.comm = comm;
+	}
+
+	public int getEid() {
+		return eid;
+	}
+
+	public void setEid(int eid) {
+		this.eid = eid;
+	}
+
+	public String getEname() {
+		return ename;
+	}
+
+	public void setEname(String ename) {
+		this.ename = ename;
+	}
+
+	public int getSalary() {
+		return salary;
+	}
+
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+
+	public float getComm() {
+		return comm;
+	}
+
+	public void setComm(float comm) {
+		this.comm = comm;
+	}
+
+	public void display()
+	{
+		
+    System.out.println("UID : "+eid);
+    System.out.println("Name : "+ename);
+    System.out.println("Salary : "+salary);
+    System.out.println("comm : "+comm);
+    
+		
+	}
+
+}
+
+</pre>
+
+<h4 class="bg-success-subtle py-2 text-dark" id="xmlBased"> Config Package - AppConfig.java   </h4> 
+
+<pre style="font-size:20px;">
+
+package com.et.main.Config;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.et.main.beans.Employee;
+
+@Configuration
+public class AppConfig {
+
+@Bean
+public CommandLineRunner commandLineRunner()
+{
+    
+    return new CommandLineRunner() {
+
+    @Override
+    public void run(String... args) throws Exception {
+        
+        emp1().display();
+        System.out.println("------------------");
+        emp2().display();
+    }
+        
+    };
+            
+}
+	
+@Bean
+public Employee emp1()
+{
+    return  new Employee(101, "Harry", 34000, 12.5f);
+}
+
+@Bean
+public Employee emp2()
+{
+    
+    return new Employee(102, "Garry", 44000, 17.2f);
+}
+
+}
+
+</pre>
+
+<h4 class="bg-danger py-2 text-white" id="springBootJdbc"> All About Spring Boot JDBC Appliation </h4> 
+
+<pre style="font-size:20px;">
+
+    Steps for Spring Boot Jdbc Application..
+
+    By Using Spring Boot JDBC, we can connect our Spring Boot Application 
+    to database in a simplified manner.
+
+    How Spring Boot Simplified the things ??
+
+    ** Because Spring Boot automates many configuratoin tasks, allowing us to focus on writing 
+    the application logic.
+
+   <font size="5" color="blue">There are 3 Main steps to perfomr Spring Boot Jdbc:</font> 
+
+    1. Provide "jdbc" and "mysql" starter dependencies
+        spring-boot-starter-jdbc 
+        spring-boot-starter-mysql 
+
+    2. Provide database properties in application.properties or application.yml files
+
+    <u>application.properties</u>
+
+        spring.datasource.url = jdbc:mysql://localhost:3306/mydb
+        spring.datasource.driver-class-name = com.mysql.cj.jdbc.Driver 
+        spring.datasource.username = root 
+        spring.datasource.password = root
+
+
+    <u>application.yml</u>
+
+    spring:
+        datasource:
+            url: jdbc:mysql://localhost:3306/your_database_name
+            username: your_username
+            password: your_password
+            driver-class-name: com.mysql.cj.jdbc.Driver
+        jpa:
+            hibernate:
+                ddl-auto: update
+            show-sql: true
+
+    <font size="5" color="red"> Spring Boot auto-configures the DataSource 
+    Based on the properties provided in 
+    application.properties file.</font> 
+
+    3. Use "JdbcTemplate" class for database operations.
+
+</pre>
+
+<h4 class="bg-success py-2 text-white" id="springBootJdbc"> Important Points About Spring Boot JDBC </h4> 
+
+<pre style="font-size:20px;">
+
+** Spring Boot JDBC is built upon Spring JDBC Module.
+
+** Spring Boot auto-configures the DataSource, JdbcTemplate / NamedParameter JDBC Template 
+    beans, reducing manual configurations.
+
+    <b>DataSource : </b>    Interface for configuring and managing database connection.
+
+<b>JdbcTemplate   : </b>    Class providing simplified JDBC operations and query exection.
+
+<b>NamedParameter</b>      Class enabling JDBC operations with named parameters
+<b> JdbcTemplate  : </b>    for better readability.
+
+</pre>
+
+
+<h4 class="bg-warning py-2 text-black" id="springBootJdbc"> Step By Step Spring Boot JDBC </h4> 
+
+<pre style="font-size:20px;">
+
+1. Create Spring Boot Starter Project and take Some name to Project 
+    then provide Group Id name as com.oraclecorp then do provide
+    base package named as com.oc.main
+
+2. We shoud take 2 dependencies, They are JDBC API and MySql Driver
+
+3. Now, go to Pom.Xml file and check that added dependencies
+
+    a. spring-boot-starter-jdbc
+    b. mysql-connector-j
+
+4. Now Go to MySql Data base and Create New Data base and New Table 
+    [whatever Coloumns names and data types you take here, provide same in entity class]
+
+5. Then, create a new package and name it as com.oc.main.beans and Take a new class
+    in it, and named as Customer.java and take same properties as creted DB table columns.
+
+6. Now, create one more package and named as  com.oc.main.dao and create a class
+   and provide the name as CustomerDAO.java
+
+7. and make this CustomerDAO class as Repository for that purpose we have to Take
+   Repository annotation as @Repository
+
+8. Actually, we do CRUD Operations at Repository layer / class.
+
+9. ***** so first we need to Configue DataSource, but the plus point in Spring Boot is 
+   Spring Boot configure DataSource automatically.
+   [ It means DataSource get auto - configure by Spring boot Internally ]
+
+10. Now Go to applicaton.properties file [ From src / main / resources ] and write 
+    Configuration code [data base details like below] like Key Value pair form.
+
+<font size="5" color="green"> Spring Boot applications are configured using the 
+    application.properties file or application.yml. 
+    For connecting to a MySQL database</font>
+
+<b> application.properties </b>
+
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/z_db_oracle
+spring.datasource.username=root
+spring.datasource.password=root
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+
+<b>application.yml </b>
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/your_database_name
+    username: your_username
+    password: your_password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+*** Because of above code Spring Boot Automatically DataSource get configured.
+and Automatically we get connected with DataBase.
+
+Here, Internally DataSource getting auto-configruing.
+and its bean object also it will get create automatically.
+
+Spring Boot auto-configured JdbcTemplate too, we just need to Autowired this with Autowired annotation.
+
+====> And JdbcTempleate provide us to perform all DataBase Crud operations.
+
+</pre>
+
+<h3 class="bg-primary-subtle py-2 text-black" id="xmlBased"> Spring Boot - Checking Connted with MySql or not  </h3> 
+<pre>
+
+<font size="5"><u>Required Files:</u>
+
+    POM.XML - Dependancies file 
+    applicatoin.properties / resourses folder
+    Application.java / base package - com.htc.main
+
+</font></pre>
+
+<h3> <u>POM.XML</u> </h3>
+<pre style="font-size:20px;"><xmp><dependencies>
+<dependency>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-jdbc</artifactId>
+</dependency>
+
+<dependency>
+<groupId>mysql</groupId>
+<artifactId>mysql-connector-java</artifactId>
+<version>8.0.33</version>
+</dependency>
+
+<dependency>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-test</artifactId>
+<scope>test</scope>
+</dependency>
+</dependencies>
+</xmp></pre>
+
+
+<h3> <u>applicatoin.properties </u></h3>
+<pre style="font-size:20px;">
+
+spring.application.name=08-SpringBootProject
+        
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/z_db_oracle
+spring.datasource.username=root
+spring.datasource.password=root
+
+spring.jpa.show-sql=true
+
+</pre>
+
+<h3> <u>Application.java</u></h3>
+<pre style="font-size:20px;">
+
+package com.htc.main;
+
+import java.sql.Connection;
+import javax.sql.DataSource;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Application implements CommandLineRunner
+{
+@Autowired
+private DataSource dataSource;
+
+public static void main(String[] args) 
+{
+    SpringApplication.run(Application.class, args);
+    System.out.println("hello Spring Boot - JDBC ");
+}
+
+@Override
+public void run(String... args) throws Exception
+{
+Connection conn = dataSource.getConnection();
+
+if(conn != null)
+{
+    System.out.println("DB Connected ");
+}
+else
+{
+    System.out.println("DB Not Connected ");
+}
+System.exit(0);
+}
+	
+}
+
+</pre>
+
+<h3 class="bg-success-subtle py-2 text-black" id="xmlBased"> Spring Boot - Established conntection and Do Crud Operatoins  </h3> 
+
+<pre>
+
+<font size="5"><u>Required Files:</u>
+
+POM.XML - Dependancies file
+
+applicatoin.properties / resourses folder
+
+Application.java / base package - com.oc.main
+
+Customers.java  - com.oc.main.beans 
+
+CustomersDao.java / base package - com.oc.main.dao
+
+</font></pre>
+
+
+<pre style="font-size:20px;">
+
+<font size="5"> <u>POM.XML</u> </font><xmp><dependencies>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-jdbc</artifactId>
+</dependency>
+
+<dependency>
+    <groupId>com.mysql</groupId>
+    <artifactId>mysql-connector-j</artifactId>
+    <scope>runtime</scope>
+</dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-test</artifactId>
+    <scope>test</scope>
+</dependency>
+</dependencies></xmp></pre>
+
+<font size="5"><u><b> com.oc.main / Application.java</b></u></font>
+
+<pre style="font-size:20px;">
+
+package com.oc.main;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.oc.main.beans.Customers;
+import com.oc.main.dao.CustomerDao;
+
+@SpringBootApplication
+public class Application implements CommandLineRunner
+{
+@Autowired
+private CustomerDao customerDao;
+
+public static void main(String[] args) {
+    SpringApplication.run(Application.class, args);
+}
+
+@Override
+public void run(String... args) throws Exception 
+{
+Customers customer1 = new Customers(124, "Jerry", "Mobile");
+boolean status = customerDao.insertUser(customer1);
+
+if(status)
+{
+    System.out.println(" Row Inserted");
+    status = true;
+}
+else
+{
+    System.out.println(" Row Not Inserted");
+    status = false; 
+}
+}
+
+}
+</pre>
+
+<font size="5"><u> <b>com.oc.main.beans / Customers.java </b></u></font>
+
+<pre style="font-size:20px;">
+
+package com.oc.main.beans;
+
+public class Customers {
+	
+private int cid;
+private String cname;
+private String purchased;
+	
+public Customers(int cid, String cname, String purchased) {
+    super();
+    this.cid = cid;
+    this.cname = cname;
+    this.purchased = purchased;
+}
+public int getCid() {
+    return cid;
+}
+public void setCid(int cid) {
+    this.cid = cid;
+}
+public String getCname() {
+    return cname;
+}
+public void setCname(String cname) {
+    this.cname = cname;
+}
+public String getPurchased() {
+    return purchased;
+}
+public void setPurchased(String purchased) {
+    this.purchased = purchased;
+}
+
+public void display()
+{
+    
+    System.out.println("\n\t"+ cid+ " "+cname+" "+purchased);
+}
+	
+}
+
+</pre>
+
+<font size="5"><u> <b>com.oc.main.dao / CustomerDao.java </b></u></font>
+
+<pre style="font-size:20px;">
+
+package com.oc.main.dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.oc.main.beans.Customers;
+
+@Repository
+public class CustomerDao {
+	
+@Autowired
+private JdbcTemplate jdbcTemplate;
+
+public boolean insertUser(Customers customer) 
+{
+boolean status = false;
+
+try {
+String ins_query = "Insert into customers values(?,?,?)";
+
+int i = jdbcTemplate.update(ins_query,customer.getCid(),customer.getCname(),customer.getPurchased());
+
+if(i>0)
+{
+    System.out.println(" true Stauts captured");
+    status = true;      
+}
+else
+{
+    System.out.println("false Stauts captured");
+    status = false;    
+}
+
+}
+catch(Exception e)
+{
+    e.printStackTrace();
+}
+return status;
+}
+
+}
+
+</pre>
+
+<font size="5"><u> <b> src/main/resouces -- application.properties </b></u></font>
+
+<pre style="font-size:20px;">
+
+spring.application.name=07-SpringBootProject
+
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/z_db_oracle
+spring.datasource.username=root
+spring.datasource.password=root
+
+</pre>
+
+<!-- Spring with Hibernate -->
+
+<h4 class="bg-success py-2 text-white" id="xmlBased">  Spring Boot with Hibernate & MySql </h4> 
+
+<pre style="font-size:20px;">
+
+   Steps for Spring Boot with Hibernate & MySql 
+
+</pre>
+
+<h4 class="bg-info py-2 text-white" id="xmlBased"> Spring Boot Data JPA Crup Operations</h4> 
+
+<pre style="font-size:20px;">
+
+    Steps for Spring Boot Data JAP Apps
+
+</pre>
+
+<h4 class="bg-danger py-2 text-white" id="xmlBased"> Spring Boot MVC </h4> 
+
+<pre style="font-size:20px;">
+
+    Steps for Spring Boot VC Apps
+
+</pre>
+
+<h4 class="bg-success py-2 text-white" id="xmlBased"> Creating REST API with Spring Boot </h4> 
+
+<pre style="font-size:20px;">
+
+    All About REST API / Web Services
+
+</pre>
+
+</div>
+</div>
+
+</body>
+</html>

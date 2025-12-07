@@ -1,0 +1,1576 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Framework</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row topBar">
+            
+        </div>
+    </div>   
+     <div class="container">
+        <div class="row pt-3">
+            <div class="col-md-6 col-sm-6  ">
+                 <h1> 🍃 Spring Framework </h1>
+            </div>
+             <div class="col-md-6 pt-3 text-end col-sm-6 " id="homeLink">
+               <a class="h4 link-underline link-underline-opacity-0 " href="../java_index.html"> Home </a>
+            </div>
+            
+        </div>
+    </div>
+  
+<br/>
+<div class="container topics pt-2" id="allTopics">
+    <div class="row  mb-2">
+           <div class="col-md-2 col-sm-2 mb-4">
+                <a href="#springIntro" class="text-decoration-none  border border-success py-2 px-3 "> Spring Introduction</a>
+            </div>
+
+             <div class="col-md-2 col-sm-2 mb-4">
+                <a href="#springContainer" class="text-decoration-none border border-success  py-1 px-3"> Spring Container </a>
+            </div> 
+            
+            <div class="col-md-1 col-sm-1 mb-4">
+                <a href="#htmlFiles" class="text-decoration-none border border-success py-1 px-3">  IoC </a>
+            </div> 
+
+            <div class="col-md-1 col-sm-1 mb-4">
+                <a href="#registerServlet" class="text-decoration-none border border-success  py-1 px-3"> AOP </a>
+            </div>
+
+            <div class="col-md-2 col-sm-2 mb-4">
+                <a href="#cssFile" class="text-decoration-none border border-success py-1 px-3"> Understanding Beans </a>
+            </div> 
+
+            <div class="col-md-4 col-sm-4 mb-4">
+                <a href="#daoClass" class="text-decoration-none border border-success  py-1 px-3"> Spring Integration Capabilities</a>
+            </div>   
+
+            <div class="col-md-4 col-sm-4 mb-4">
+                <a href="#xmlBased" class="text-decoration-none border border-success py-1 px-3">  Sample Spring Program - xml Based</a>
+            </div> 
+
+            <div class="col-md-4 col-sm-4 mb-4">
+                <a href="#javaBased" class="text-decoration-none border border-success py-1 px-3">  Sample Spring Program - Java  Based</a>
+            </div> 
+
+            <div class="col-md-4 col-sm-4 mb-4">
+                <a href="#annotationBased" class="text-decoration-none border border-success py-1 px-3">  Sample Spring Program - Annotation  Based</a>
+            </div> 
+
+             <div class="col-md-3 col-sm-3 mb-4">
+                <a href="#di" class="text-decoration-none border border-success py-1 px-3"> Dependency Injection </a>
+            </div> 
+
+             <div class="col-md-2 col-sm-2 mb-4">
+                <a href="#autoWiring" class="text-decoration-none border border-success py-1 px-3"> Auto Wiring</a>
+            </div>
+
+            <div class="col-md-3 col-sm-3 mb-4">
+                <a href="#loginServlet" class="text-decoration-none border border-success  py-1 px-3"> Spring JDBC and ORM </a>
+            </div>
+
+             <div class="col-md-3 col-sm-3 mb-4">
+                <a href="#loginServlet" class="text-decoration-none border border-success  py-1 px-3"> Object-Relational Mapping [ORM] </a>
+            </div>
+                   
+            <div class="col-md-2 col-sm-2 mb-4">
+                <a href="#loginServlet" class="text-decoration-none border border-success  py-1 px-3"> Spring MVC </a>
+            </div>          
+    </div>
+
+<div class="pt-3 "> </div>
+<div class="container border border-2 border-primary p-3 ">
+
+<div class="row px-5 py-2" id="dataWriting">
+
+<h4 class="bg-success-subtle py-2" id="springIntro"> Spring Introduction </h4> 
+        
+<pre style="font-size:20px;">
+
+Spring is an open source java frame work
+
+It is used intostand alone and enterprise app's
+
+It is released in 2004 and developed by "Rod Johnson"
+
+<b>Java spring configuration done by 3 ways: </b>
+
+    1. xml based
+
+    2. Java based
+
+    3. Annotation based
+
+</pre>
+<br/><br/>
+<h4 class="bg-danger-subtle py-2" id="springContainer">  Spring Container [Core Component] </h4>
+
+<pre style="font-size:20px;">
+
+Spring Container is consider as the heart of the Spirng.
+
+like wise JVM is the heart of Java.
+
+<b>Spring Container Responsiblities: </b>
+
+    1. Manage bean Objects
+
+    2. Manage bean life cycle
+
+    3. DI / Dependency Injection
+
+    4. AOP / Aspect Ojbect Programming
+
+    5. Transaction Management
+
+    6. Internationalize (I18N)
+
+<b>Spring Container are two types:</b>
+
+    1. Bean Factory (Old)
+    2. Application Context (new)
+
+    ** (Application Context is basically a Interface)
+
+    <b> Note:  Spring Container is invoked / start by Application Context,
+     It means Spring Container Responsibilities executed by Application Context.</b>
+
+     
+   <span class="bg-warning py-2 m-2 h4" > Spring Container Process Image </span> <br/>
+    <img src = "Spring Container.png" class="pt-2" style="border:2px solid gray; width:600px; height:400px; ">
+
+    <h4 class="bg-danger-subtle py-2" >  Spring 5 Jar Files </h4>
+
+        1. spring-beans-xxxx.jar
+
+        2. spring-core-xxxx.jar
+
+        3. spring-context-xxxx.jar
+
+        4. common-logging-xxxx.jar
+
+        5. spring-expression-xxxx.jar
+
+</pre>
+<h4 class="bg-success-subtle py-2" id="xmlBased"> Spring Sample Program - xml based configuratin </h4> 
+        
+<pre style="font-size:20px;">
+
+        <a href="" style="text-decoration: none;"> Entity Class / Pojo Class</a>
+
+        <a href="" style="text-decoration: none;" > Applicatin Context File [XML Based Config]</a>
+
+        <a href="" style="text-decoration: none;"> Controller Class / Main Class </a>
+
+</pre>
+
+<h4 class="bg-primary-subtle py-2"> Entity Class  </h4> 
+        
+<pre style="font-size:20px;">
+
+package com.ztech.beans;
+
+public class Employee {
+	
+	private int eid;
+	private String ename;
+	private double salary;
+	
+	
+	public int getEid() {
+		return eid;
+	}
+	public void setEid(int eid) {
+		this.eid = eid;
+	}
+	public String getEname() {
+		return ename;
+	}
+	public void setEname(String ename) {
+		this.ename = ename;
+	}
+	public double getSalary() {
+		return salary;
+	}
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+	
+	public void display()
+	{
+		System.out.println(eid+" "+ename+" "+salary);
+	}
+
+}
+
+</pre>
+
+<h4 class="bg-warning-subtle py-2" > Applicatin Context File </h4> 
+        
+<pre style="font-size:20px;"><xmp>
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+    <bean class="com.ztech.beans.Employee" id="EmpId1">
+    	<property name="eid" value="1010" />
+    	<property name="ename" value="Sam" />
+    	<property name="salary" value="34000" />
+    </bean>
+    
+      <bean class="com.ztech.beans.Employee" id="EmpId2">
+    	<property name="eid" value="1011" />
+    	<property name="ename" value="Ken" />
+    	<property name="salary" value="37000" />
+    </bean>
+</beans>
+</xmp>
+</pre>
+
+<h4 class="bg-info-subtle py-2"> Controller Class / Main Class  </h4> 
+        
+<pre style="font-size:20px;">
+package com.ztech.controller;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.ztech.beans.Employee;
+
+public class ContrllerClass {
+
+	public static void main(String[] args) {
+		
+	String config_loc = "/com/ztech/resouces/applicationContext.xml";
+	@SuppressWarnings("resource")
+	ApplicationContext context = new ClassPathXmlApplicationContext(config_loc);
+	
+	//Employee emp = new Employee();
+	//emp.display();
+	
+	Employee emp1 = (Employee) context.getBean("EmpId1"); // getter injection
+	emp1.display();
+	
+	Employee emp2 = (Employee) context.getBean("EmpId2"); // getter injection
+	emp2.display();
+	}
+
+}
+
+</pre>
+
+<h4 class="bg-success-subtle py-2" id="javaBased"> Spring Sample Program - Java based configuration </h4> 
+        
+<pre style="font-size:20px;">
+
+<a href="" style="text-decoration: none;"> Entity Class / Pojo Class </a>
+
+<a href="" style="text-decoration: none;" > Applicatin Context File [JAVA Based Config]</a>
+
+<a href="" style="text-decoration: none;"> Controller Class / Main Class </a>
+
+<b style="color:red;">  To Make Run Java Based Configuration We need Extra Jar File along with 
+
+  that 5 Jar files used in Xml Based Configuration.
+
+  That is - <span style="color:green;"> 6. spring-aop-xxxx.jar </span> </b>
+
+</pre>
+
+<h4 class="bg-success-subtle py-2"> Entity Class / POJO Class </h4> 
+        
+<pre style="font-size:20px;">
+
+package com.ibm.amazon.beans;
+
+public class Student {
+	
+	private int sid;
+	private String sname;
+	private String dept;
+	
+	public int getSid() {
+		return sid;
+	}
+	public void setSid(int sid) {
+		this.sid = sid;
+	}
+	public String getSname() {
+		return sname;
+	}
+	public void setSname(String sname) {
+		this.sname = sname;
+	}
+	public String getDept() {
+		return dept;
+	}
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+	
+	public void display()
+	{
+		System.out.println(sid+" "+sname+" "+dept);
+	}
+
+}
+
+</pre>
+
+<h4 class="bg-warning-subtle py-2" > Applicatin Context File / Java Based Config </h4> 
+        
+<pre style="font-size:20px;"><xmp>
+package com.ibm.amazon.resources;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.ibm.amazon.beans.Student;
+
+@Configuration
+public class SpringConfig {
+	
+	@Bean("obj1")
+	public Student studId1()
+	{
+		Student stu = new Student();
+		
+		stu.setSid(1101);
+		stu.setSname("Kiran");
+		stu.setDept("CSE");
+		
+		return stu;
+	}
+	
+	@Bean("obj2")
+	public Student studId2()
+	{
+		Student stu = new Student();
+		
+		stu.setSid(1102);
+		stu.setSname("Raju");
+		stu.setDept("EEE");
+		
+		return stu;
+	}
+
+}
+</xmp></pre>
+
+<h4 class="bg-info-subtle py-2"> Controller Class / Main Class  </h4> 
+        
+<pre style="font-size:20px;">
+package com.ibm.amazon.controller;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.ibm.amazon.beans.Student;
+import com.ibm.amazon.resources.SpringConfig;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		
+		@SuppressWarnings("resource")
+		ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+		
+		Student stu1 = (Student) context.getBean("obj1");
+		stu1.display();
+		
+		//Student stu1 = (Student) context.getBean("studId1");
+		//stu1.display();
+		
+		//Student stu1 = (Student) context.getBean(Student.class);
+		//stu1.display();
+
+		Student stu2 = (Student) context.getBean("obj2");
+		stu2.display();
+	}
+
+}
+</pre>
+
+<h4 class="bg-success-subtle py-2" id="annotationBased"> Spring Sample Program - Annotation based configuratin </h4> 
+        
+<pre style="font-size:20px;">
+
+<a href="" style="text-decoration: none;"> Entity Class / Pojo Class </a>
+
+<a href="" style="text-decoration: none;" > Applicatin Context File [Annotation Based Config]</a>
+<span style="color:red;">
+* [ Annotation Based Config basically done based out of <b>xml or java </b>based agaain]
+
+We can find both processes xml based and java based annotations at below
+</span>
+<a href="" style="text-decoration: none;" > Annotation Based  XML Config</a>
+<a href="" style="text-decoration: none;" > Annotation Based JAVA Config </a>
+
+<a href="" style="text-decoration: none;"> Controller Class / Main Class </a>
+
+</pre>
+
+<h4 class="bg-success-subtle py-2"> Entity Class / POJO Class </h4> 
+
+<pre style="font-size:20px;">
+
+package com.zen.beans;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Student {
+	
+	@Value("1010")
+	private int sid;
+	
+	@Value("Harry")
+	private String sname;
+	
+	@Value("Core-Python")
+	private String course;
+
+	public int getSid() {
+		return sid;
+	}
+	public void setSid(int sid) {
+		this.sid = sid;
+	}
+	public String getSname() {
+		return sname;
+	}
+	public void setSname(String sname) {
+		this.sname = sname;
+	}
+	public String getCourse() {
+		return course;
+	}
+	public void setCourse(String course) {
+		this.course = course;
+	}
+
+	public void display()
+	{
+		System.out.println(sid+" "+sname+" "+course);
+	}
+
+}
+</pre>
+
+<h4 class="bg-success-subtle py-2"> Controller Class / Main Class  </h4> 
+
+<pre style="font-size:20px;">
+package com.zen.controller;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.zen.beans.Student;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		
+		String config_path="/com/zen/resources/applicationContext.xml";
+		@SuppressWarnings("resource")
+		ApplicationContext context = new ClassPathXmlApplicationContext(config_path);
+		
+		Student stu = (Student) context.getBean("student");
+		stu.display();
+
+	}
+
+}
+</pre>
+
+<h4 class="bg-info-subtle py-2"> Applicatin Context File [Annotation Based Config] - XML Based</h4> 
+
+<pre style="font-size:20px;"><xmp>
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+      http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+      
+
+    <!-- bean definitions here -->
+    
+    <context:component-scan base-package="com.zen.beans"/>
+</beans>
+</xmp></pre>
+
+<h4 class="bg-primary-subtle py-2"> Applicatin Context File [Annotation Based Config] - JAVA Based</h4> 
+
+<pre style="font-size:20px;">
+package com.zen.resources;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ComponentScan("com.zen.beans")
+
+public class SpringConfig {
+	
+	
+}
+
+</pre>
+
+<h4 class="bg-warning-subtle py-2" id="di"> Dependency Injection </h4> 
+
+<pre style="font-size:20px;">
+
+Dependency Injectionit is a Design Pattern.
+
+And It is used in the spring framework to achieve Inversion of Control (Ioc).
+<b style="color:green">
+Its main task is to "inject" the "dependency" means inject one object into 
+another object.
+</b>
+It is used to achieve loose coupling in java.
+
+Basically core java do tight  coupling. 
+<b style="color:blue">
+Dependancy Injection achieved with XML and Java based Configuration,
+with Setter Injection and Constructor Injection.</b>
+<span style="background: yellow;">
+We can find both processes xml based and java based annotations at below
+</span>
+</pre>
+
+<h4 class="bg-success-subtle py-2" id="annotationBased"> 
+	Dependency Injection Sample Program - XML based Throgh Setter Injection </h4> 
+        
+<pre style="font-size:20px;">
+
+<a href="" style="text-decoration: none;"> Beans Package - Entity Classes / Pojo Classe </a>
+
+<a href="" style="text-decoration: none;">    Student Class</a>
+<a href="" style="text-decoration: none;">    Address Class</a>
+
+<a href="" style="text-decoration: none;" > Resource Package - Applicatin Context File </a>
+<font color="green" size="3">
+	✅ [Dependency Injection Throgh Setter Injection By XML based Config ]
+	✅ [Dependency Injection Constructor Injection By XML based Config ]
+</font>
+<a href="" style="text-decoration: none;"> Controller Class / Main Class </a>
+
+</pre>
+<h2 class="text-center text-primary border border-primary p-2 bg-primary-subtle">
+	DI - Setter Injection Process  - XML Config </i> </h2>
+
+<h4 class="bg-warning-subtle py-2"> 
+	DI - Entity Class - Student Class </h4>      
+<pre style="font-size:20px;">
+
+package com.csc.beans;
+
+public class Student {
+	
+	private int rno;
+	private String sname;
+	private Address address;
+	
+	public int getRno() {
+		return rno;
+	}
+	public void setRno(int rno) {
+		this.rno = rno;
+	}
+	public String getSname() {
+		return sname;
+	}
+	public void setSname(String sname) {
+		this.sname = sname;
+	}
+	
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
+	public void display()
+	{
+		System.out.println(rno+" "+sname+" "+address);
+	}
+
+}
+
+</pre>
+
+<h4 class="bg-primary-subtle py-2"> DI -Entity Class - Address Class </h4> 
+        
+<pre style="font-size:20px;">
+
+package com.csc.beans;
+
+public class Address {
+	
+	private int hno;
+	private String city;
+	private int pin;
+	
+	public int getHno() {
+		return hno;
+	}
+	public void setHno(int hno) {
+		this.hno = hno;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public int getPin() {
+		return pin;
+	}
+	public void setPin(int pin) {
+		this.pin = pin;
+	}
+	@Override
+	public String toString() {
+		return "hno=" + hno + ", city=" + city + ", pin=" + pin;
+	}
+	
+}
+
+</pre>
+
+<h4 class="bg-info-subtle py-2"> DI - Setter Injection - XML Bsed</h4> 
+
+<pre style="font-size:20px;"><xmp>
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+    <bean class="com.csc.beans.Address" id="addressId1">
+    	<property name="hno" value="333" />
+    	<property name="city" value="Orance City" />
+    	<property name="pin" value="506001" />
+    </bean>
+    
+      <bean class="com.csc.beans.Student" id="stuId1">
+    	<property name="rno" value="1221" />
+    	<property name="sname" value="Roman" />
+    	<property name="address" ref="addressId1" />
+    </bean>
+</beans>
+</xmp></pre>
+<pre style="font-size:20px;">
+<font size="4" color="green">** using property tags (internally it is using setter methods)
+and injecting one object into another means we are implementing 
+setter method DI  </font>
+</pre>
+
+<h4 class="bg-primary-subtle py-2"> Controller / Main Class - DI Setter - XML Based</h4> 
+
+<pre style="font-size:20px;">
+package com.csc.controller;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.csc.beans.Student;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		
+		String config_path = "/com/csc/resources/applicationContext.xml";
+		@SuppressWarnings("resource")
+		ApplicationContext context = new ClassPathXmlApplicationContext(config_path);
+		
+		Student stu = (Student) context.getBean("stuId1");
+		stu.display();
+
+	}
+
+}
+
+</pre>
+
+<h2 class="text-center text-primary border border-primary p-2 bg-primary-subtle">
+	DI - Constructor Injection Process  - XML Config </i> </h2>
+
+<h4 class="bg-warning-subtle py-2"> 
+	DI - Entity Class - Student Class </h4>      
+<pre style="font-size:20px;">
+
+package com.csc.beans;
+
+package com.csc.beans;
+
+public class Student {
+	
+	private int rno;
+	private String sname;
+	private Address address;
+	
+	public Student(int rno, String sname, Address address) {
+		super();
+		this.rno = rno;
+		this.sname = sname;
+		this.address = address;
+	}
+
+	public void display()
+	{
+		System.out.println(rno+" "+sname+" "+address);
+	}
+
+}
+
+</pre>
+
+<h4 class="bg-primary-subtle py-2"> DI - Entity Class - Address Class </h4> 
+        
+<pre style="font-size:20px;">
+
+package com.csc.beans;
+
+public class Address {
+	
+	private int hno;
+	private String city;
+	private int pin;
+	
+	public Address(int hno, String city, int pin) {
+		super();
+		this.hno = hno;
+		this.city = city;
+		this.pin = pin;
+	}
+
+	@Override
+	public String toString() {
+		return "hno=" + hno + ", city=" + city + ", pin=" + pin;
+	}
+	
+}
+
+</pre>
+
+<h4 class="bg-info-subtle py-2"> DI - Constructor Injection - XML Bsed  </h4> 
+
+<pre style="font-size:20px;"><xmp>
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+    <bean class="com.csc.beans.Address" id="addressId1">
+    	<constructor-arg value="304"/>
+    	<constructor-arg value="Lemon City"/>
+    	<constructor-arg value="889001"/>
+    </bean>
+    
+      <bean class="com.csc.beans.Student" id="stuId1">
+    	<constructor-arg value="1010" />
+    	<constructor-arg value="Rajesh" />
+    	<constructor-arg ref="addressId1" />
+    </bean>
+
+</beans>
+</xmp></pre>
+<pre style="font-size:20px;">
+<font size="4" color="green">DI - Setter Injection Vs Constructor Injection</font>
+    
+<font color="blue">using constructor tags (internally it is using 
+constructor methods) and injecting one object into another means 
+we are implementing Constructor DI 
+
+while bean creation we cannot take name attribute other wise
+we get fall back warning.
+
+In constructor passing values in sequence is must.
+
+but in setter we can pass values in any sequance by providing
+name and value properties 
+</font>
+</pre>
+
+<h4 class="bg-primary-subtle py-2"> Controller / Mian Class [XML Based - DI Constructor Injection] </h4> 
+
+<pre style="font-size:20px;">
+package com.csc.controller;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.csc.beans.Student;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		
+		String config_path = "/com/csc/resources/applicationContext.xml";
+		@SuppressWarnings("resource")
+		ApplicationContext context = new ClassPathXmlApplicationContext(config_path);
+		
+		Student stu = (Student) context.getBean("stuId1");
+		stu.display();
+
+	}
+
+}
+
+</pre>
+
+<h2 class="text-center text-dark border border-warning p-2 bg-warning-subtle">
+	DI - Setter Injection Process  - JAVA Config </i> </h2>
+
+<h4 class="bg-success-subtle py-2"> 
+	DI - Entity Class - Student Class </h4>      
+
+<pre style="font-size:20px;">
+package com.csc.beans;
+
+public class Student {
+	
+	private int rno;
+	private String sname;
+	private Address address;
+	
+	public int getRno() {
+		return rno;
+	}
+	public void setRno(int rno) {
+		this.rno = rno;
+	}
+	public String getSname() {
+		return sname;
+	}
+	public void setSname(String sname) {
+		this.sname = sname;
+	}
+	
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
+	public void display()
+	{
+		System.out.println(rno+" "+sname+" "+address);
+	}
+
+}
+
+</pre>
+
+<h4 class="bg-primary-subtle py-2"> DI -Entity Class - Address Class </h4> 
+        
+<pre style="font-size:20px;">
+
+package com.csc.beans;
+
+public class Address {
+	
+	private int hno;
+	private String city;
+	private int pin;
+	
+	public int getHno() {
+		return hno;
+	}
+	public void setHno(int hno) {
+		this.hno = hno;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public int getPin() {
+		return pin;
+	}
+	public void setPin(int pin) {
+		this.pin = pin;
+	}
+	@Override
+	public String toString() {
+		return "hno=" + hno + ", city=" + city + ", pin=" + pin;
+	}
+	
+}
+
+</pre>
+
+<h4 class="bg-info-subtle py-2"> Spring Config / DI - Setter Injection - Java Bsed</h4> 
+
+<pre style="font-size:20px;">
+
+package com.csc.resources;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.csc.beans.Address;
+import com.csc.beans.Student;
+
+
+@Configuration
+public class SpringConfig {
+	
+	@Bean
+	public Address addId()
+	{
+		Address address = new Address();
+		
+		address.setHno(2334);
+		address.setCity("Hyd");
+		address.setPin(506001);
+		
+		return address;
+	}
+	
+	@Bean
+	public Student stuId()
+	{
+		Student stu = new Student();
+		
+		stu.setRno(1010);
+		stu.setSname("Ravi");
+		stu.setAddress(addId());
+		
+		return stu;
+	}
+
+}
+
+</pre>
+<h4 class="bg-primary-subtle py-2"> Controller / Main Class - DI Setter - JAVA Based</h4> 
+
+<pre style="font-size:20px;">
+package com.csc.controller;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.csc.beans.Address;
+import com.csc.beans.Student;
+import com.csc.resources.SpringConfig;
+
+public class MainClass {
+
+public static void main(String[] args) {
+	
+	
+	@SuppressWarnings("resource")
+	ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+
+	Address address = (Address) context.getBean("addId");
+	System.out.println(address);
+
+	Student student = (Student) context.getBean("stuId");
+	student.display();
+	
+
+}
+
+}
+</pre>
+&nbsp;
+
+<h2 class="text-center text-success border border-success p-2 bg-success-subtle">
+	DI - Constructor Injection Process  - JAVA Config </i> </h2>
+
+<h4 class="bg-warning-subtle py-2"> 
+	DI - Entity Class - Student Class </h4>      
+<pre style="font-size:20px;">
+
+package com.csc.beans;
+
+package com.csc.beans;
+
+public class Student {
+	
+private int rno;
+private String sname;
+private Address address;
+
+public Student(int rno, String sname, Address address) {
+	super();
+	this.rno = rno;
+	this.sname = sname;
+	this.address = address;
+}
+
+public void display()
+{
+	System.out.println(rno+" "+sname+" "+address);
+}
+
+}
+
+</pre>
+
+<h4 class="bg-primary-subtle py-2"> DI - Entity Class - Address Class </h4>  
+<pre style="font-size:20px;">
+
+package com.csc.beans;
+
+public class Address {
+	
+private int hno;
+private String city;
+private int pin;
+
+public Address(int hno, String city, int pin) {
+	super();
+	this.hno = hno;
+	this.city = city;
+	this.pin = pin;
+}
+
+@Override
+public String toString() {
+	return "hno=" + hno + ", city=" + city + ", pin=" + pin;
+}
+	
+}
+
+</pre>
+
+<h4 class="bg-info-subtle py-2"> Main Class / Controller / DI - Constructor Injection - JAVA Bsed  </h4> 
+<pre style="font-size:20px;">
+package com.vls.controller;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.vls.beans.Department;
+import com.vls.beans.Employee;
+import com.vls.resources.SpringConfig;
+
+public class MainClass {
+
+public static void main(String[] args) {
+		
+@SuppressWarnings("resource")
+ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+
+Department dept = (Department) context.getBean("setDeptObj");
+System.out.println(dept);
+
+System.out.println("\n Employee Details: ");
+System.out.println("---------------------\n");
+//  Employee emp = (Employee) context.getBean("setStuObj");
+Employee emp = (Employee) context.getBean(Employee.class);
+emp.display();
+
+	}
+}
+</pre>
+
+<h4 class="bg-warning-subtle py-2"> Spring Config / DI - Constructor Injection - JAVA Bsed  </h4> 
+<pre style="font-size:20px;">
+package com.csc.resources;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.csc.beans.Address;
+import com.csc.beans.Student;
+
+@Configuration
+public class SpringConfig {
+	
+	@Bean
+	public Address addId()
+	{
+		Address address = new Address(2222,"BLR",506009);
+
+		return address;
+	}
+	
+	@Bean
+	public Student stuId()
+	{
+		Student stu = new Student(1,"Babu",addId());
+		
+		return stu;
+	}
+
+}
+
+</pre>
+
+<h4 class="bg-success-subtle py-2" id="autoWiring"> Auto Wired </h4> 
+
+<pre style="font-size:20px;">
+
+Auto Wired is the process to convert the Manual Dependancy Injection to 
+Auto Dependancy Injection.
+
+The @Autowired annotation in Spring is used for automatic dependancy injection.
+
+Autowired is used to achieve "DI Automatically"
+<b style="color:green">
+Autowired annotatoin tells to Spring grab the right peace (Bean) and plug it
+respective bean to work automatic Dependancy Injection.
+</b>
+In short, it simplifies your code by letting Spring handle connections between
+Objects to executes proper Dependancy Injection.
+
+Basically, Dependancy Injection perform manually without Autowired.
+
+With Autowiring we achive Automatic Dependancy Injection.
+<b style="color:blue">
+Autowiring can be achieved by 2 Ways: </b>
+<span style="background: yellow; font-size: 18px;">
+  -- Annotation Based Autowiring -> @Autowired
+  -- XML Based Autowiring  -> "autowire" attribute (modes)
+</span>
+
+<font size="4" color="purple" >Auto Wiring => Auto + Wiring
+
+"Auto" Means Automatically manages the connection between Objects.
+
+"Wiring" Means Linking those objects together to fulfill dependencies.</font>
+
+</pre>
+
+<h4 class="bg-warning-subtle py-2" id="awJavaBased"> Auto Wiring Sample Program - Java Based Configuration  </h4>        
+&nbsp;
+<pre style="font-size:20px;">
+<a href="" style="text-decoration: none;"> Beans Package - Entity Classes / Pojo Classe </a>
+
+<a href="" style="text-decoration: none;">    Department Class</a>
+<a href="" style="text-decoration: none;">    Employee Class</a>
+
+<a href="" style="text-decoration: none;" > Resource Package - Applicatin Context File </a>
+<font color="green" size="3">
+	✅ [ Annotation Based Autowiring -> @Autowired ]
+	✅ [ XML Based Autowiring ]
+</font>
+<a href="" style="text-decoration: none;"> Controller Class / Main Class </a>
+
+</pre>
+
+<h2 class="text-center text-success border border-success p-2 bg-success-subtle">
+	Auto Wiring - Annotatoin Based - JAVA Config </i> </h2>
+
+<h4 class="bg-warning-subtle py-2"> 
+	Auto Wiring - Entity Class - Department Class </h4>      
+<pre style="font-size:20px;">
+
+package com.vls.beans;
+
+public class Department {
+	
+	private int deptId;
+	private String deptName;
+	private String deptLocation;
+	
+	public void setDeptId(int deptId) {
+		this.deptId = deptId;
+	}
+
+	public void setDeptName(String deptName) {
+		this.deptName = deptName;
+	}
+
+	public void setDeptLocation(String deptLocation) {
+		this.deptLocation = deptLocation;
+	}
+	@Override
+	public String toString() {
+		return "\tDept Id: #"+ deptId +"\n\tDept Name: " +deptName +"\n\tDept Locatoin: "+ deptLocation ;
+	}
+
+}
+
+</pre>
+
+<h4 class="bg-primary-subtle py-2"> Auto Wiring - Entity Class - Employee Class </h4>  
+<pre style="font-size:20px;">
+
+package com.vls.beans;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class Employee {
+	
+	private int eid;
+	private String ename;
+	
+	@Autowired          
+	private Department department;
+
+	public void setEid(int eid) {
+		this.eid = eid;
+	}
+	
+	public void setEname(String ename) {
+		this.ename = ename;
+	}
+
+	public void display()
+	{
+		System.out.println(" Employee Id:  "+eid+"\n Employee Name:  "+ename+"\n Department Details: \n"+department);
+	}
+
+}
+
+</pre>
+<b style="color:green; font-size:20px;" >Auto wiring used to injecting one object into another Object automatically,
+ It means Auto wired Annotatoin used to perform DI Automatically. </b>
+&nbsp;
+<h4 class="bg-warning-subtle py-2"> Spring Config / Auto Wiring - JAVA Bsed  </h4> 
+<pre style="font-size:20px;">
+package com.vls.resources;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.vls.beans.Department;
+import com.vls.beans.Employee;
+
+@Configuration
+public class SpringConfig {
+	
+	@Bean
+	public Department setDeptObj()
+	{
+		Department dept = new Department();
+		
+		dept.setDeptId(123);
+		dept.setDeptName("HR");
+		dept.setDeptLocation("Noida");
+		
+		return dept;
+	}
+	
+	@Bean
+	public Employee setStuObj()
+	{
+		Employee emp = new Employee();
+		
+		emp.setEid(1010);
+		emp.setEname("Ravi Kiran");
+
+		//emp.setDepartment(setDeptObj());  // Manually DI - Dependancy Injection
+		
+		return emp;
+	}
+}
+
+</pre>
+
+<h4 class="bg-success-subtle py-2"> Main Class / Auto Wiring - JAVA Bsed  </h4> 
+<pre style="font-size:20px;">
+package com.vls.controller;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.vls.beans.Department;
+import com.vls.beans.Employee;
+import com.vls.resources.SpringConfig;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		
+	@SuppressWarnings("resource")
+	ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+	
+	Department dept = (Department) context.getBean("setDeptObj");
+	System.out.println(dept);
+	
+	System.out.println("\n Employee Details: ");
+	System.out.println("---------------------\n");
+	//Employee emp = (Employee) context.getBean("setStuObj");
+	Employee emp = (Employee) context.getBean(Employee.class);
+	emp.display();
+
+	}
+}
+
+</pre>
+
+<h4 class="bg-danger-subtle py-2"> Auto Wiring - Next Advanced Level </h4> 
+<pre style="font-size:20px;">
+
+<h4>Taking multiple beans,
+And Injecting multiple beans into a single bean
+by using Autowired Annotation,
+And using Qualifier Annotation,
+Qualifier Annotation used to Speicfying 
+a bean to Inject From Multiple beans.</h4>
+</pre>
+<h4 class="bg-warning-subtle py-2"> Process For Advanced Auto Wiring </h4> 
+
+<h5 class="bg-primary-subtle py-2"> 
+<pre style="font-size:20px;">
+
+<font color="blue" size="4">Advanced Auto wiring Contains:</font>
+
+Below Classes:
+
+  -- More than one Entity Classes
+  -- Configuration class
+  -- Controller Class / Main Class
+  -- Using List Collection
+
+Below Annotatoins:
+
+ -- @Autowried
+ -- @Qualifier
+
+</pre>
+</h5> 
+
+<h4 class="bg-danger-subtle py-2"> Adv Auto Wiring - Entity Class - Employee Class </h4>  
+<pre style="font-size:20px;">
+
+package com.vls.beans;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+public class Employee {
+	
+	private int eid;
+	private String ename;
+	
+	@Autowired
+	@Qualifier("setDeptObj2")
+	private Department department;
+	
+	@Autowired
+	private Duties duty;
+	
+	
+//	public Duties getDuty() {
+//		return duty;
+//	}
+//
+//	public void setDuty(Duties duty) {
+//		this.duty = duty;
+//	}
+
+	public void setEid(int eid) {
+		this.eid = eid;
+	}
+	
+	public void setEname(String ename) {
+		this.ename = ename;
+	}
+
+	public void display()
+	{
+		System.out.println(" Employee Id:  "+eid+"\n Employee Name:  "+ename+
+				"\n Department Details: \n"+department+
+				"\n Duties : \n\t"+duty);
+	}
+
+}
+
+</pre>
+
+<h4 class="bg-warning-subtle py-2"> Adv Auto Wiring - Entity Class - Department Class </h4>  
+<pre style="font-size:20px;">
+
+package com.vls.beans;
+
+public class Department {
+	
+private int deptId;
+private String deptName;
+private String deptLocation;
+	
+	public void setDeptId(int deptId) {
+		this.deptId = deptId;
+	}
+
+	public void setDeptName(String deptName) {
+		this.deptName = deptName;
+	}
+
+	public void setDeptLocation(String deptLocation) {
+		this.deptLocation = deptLocation;
+	}
+	@Override
+	public String toString() {
+		return "\tDept Id: #"+ deptId +"\n\tDept Name: " +deptName +"\n\tDept Locatoin: "+ deptLocation ;
+	}
+
+}
+</pre>
+<h4 class="bg-success-subtle py-2"> Adv Auto Wiring - Entity Class - Duties Class </h4>  
+<pre style="font-size:20px;">
+
+package com.vls.beans;
+
+import java.util.List;
+
+public class Duties {
+	
+	private List<String> duties;
+
+	public List<String> getDuties() {
+		return duties;
+	}
+
+	public void setDuties(List<String> duties) {
+		this.duties = duties;
+	}
+
+	@Override
+	public String toString() {
+		return  duties+" ";
+	}
+		
+}
+
+</pre>
+
+<h4 class="bg-primary-subtle py-2"> Spring Config / Beans Creationg & Injecting / resources </h4>  
+<pre style="font-size:20px;">
+
+package com.vls.resources;
+
+import java.util.ArrayList;
+
+import java.util.List;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.vls.beans.Department;
+import com.vls.beans.Duties;
+import com.vls.beans.Employee;
+
+@Configuration
+public class SpringConfig {
+	
+@Bean
+public Department setDeptObj1()
+{
+	Department dept = new Department();
+	
+	dept.setDeptId(123);
+	dept.setDeptName("HR");
+	dept.setDeptLocation("Noida");
+	
+	return dept;
+}
+	
+@Bean
+public Department setDeptObj2()
+{
+	Department dept = new Department();
+	
+	dept.setDeptId(125);
+	dept.setDeptName("Finance");
+	dept.setDeptLocation("Mumbai");
+	
+	return dept;
+}
+
+@Bean
+public Employee setEmpObj()
+{
+	Employee emp = new Employee();
+	
+	emp.setEid(1010);
+	emp.setEname("Ravi Kiran");
+	
+	//emp.setDepartment(setDeptObj());  // Manually DI - Dependancy Injection
+	//emp.setDuty(setDutiesObj());    // Manually DI
+	
+	return emp;
+}
+	
+@Bean
+public Duties setDutiesObj()
+{
+	Duties dutie = new Duties();
+	
+	List<String> duties_emp = new ArrayList<>();
+	
+	duties_emp.add("Developement");
+	duties_emp.add("Testing");
+	duties_emp.add("Deployment");
+	
+	dutie.setDuties(duties_emp);
+	
+	return dutie;
+	
+}
+}
+
+</pre>
+
+<h4 class="bg-warning-subtle py-2"> Main Class / Controller / Auto wiring Execution </h4>  
+<pre style="font-size:20px;">
+
+package com.vls.controller;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.vls.beans.Employee;
+import com.vls.resources.SpringConfig;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		
+	@SuppressWarnings("resource")
+	ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+	
+	//Department dept = (Department) context.getBean("setDeptObj");
+	//System.out.println(dept);
+	
+	System.out.println("\n Employee Details: ");
+	
+	System.out.println("---------------------\n");
+	
+	//Employee emp = (Employee) context.getBean("setEmpObj");
+	
+	Employee emp = (Employee) context.getBean(Employee.class);
+	
+	emp.display();
+
+	}
+
+}
+
+</pre>
+
+</div>
+</div>
+
+</body>
+</html>

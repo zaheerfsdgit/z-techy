@@ -1,0 +1,242 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Files</title>
+      <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+   
+    <div class="container-fluid">
+        <div class="row topBar">
+            
+        </div>
+    </div>
+     <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6  ">
+               <h1> File Handling </h1>
+            </div>
+             <div class="col-md-6 pt-3 text-end col-sm-6">
+               <a class="h4 link-underline link-underline-opacity-0" href="../java_index.html"> Home </a>
+            </div>
+            
+        </div>
+    </div>
+
+    <br/>
+<div class="container topics">
+    <div class="row  mb-2">
+     
+			<div class="col-md-3 col-sm-3 mb-3">
+				<a href="#dataWriting" class="text-decoration-none  border border-success py-2 px-3 "> Data Writing with File</a>
+			</div>
+            <div class="col-md-3 col-sm-3 ">
+                <a href="#dataReading" class="text-decoration-none  border border-success py-2 px-3"> Data Reading with File</a>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <a href="#serialize" class="text-decoration-none  border border-success py-2 px-3"> Serialization Interface </a>
+            </div>
+            
+    </div>
+    <div class="row  mt-4">
+        <div class="col-md-3 col-sm-3">
+                <a href="" class="text-decoration-none  border border-success py-2 px-3"> FileInput Stream </a>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <a href="" class="text-decoration-none  border border-success py-2 px-3"> FileOutput Stream </a>
+            </div>
+         
+            <div class="col-md-3 col-sm-3">
+                <a href="" class="text-decoration-none  border border-success py-2 px-3"> ObjectOutput Stream </a>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <a href="" class="text-decoration-none  border border-success py-2 px-3"> ObjectInput Stream </a>
+            </div>
+ 
+        </div>
+    </div>
+
+<div class="pt-5 "> </div>
+<div class="container border border-2 border-primary p-3 ">
+
+    <div class="row px-5 py-2" id="dataWriting">
+
+        <h4 class="bg-success-subtle py-2"> Data Writing with File </h4> 
+        
+<pre style="font-size:20px;">
+
+In Java, an ArrayList is a resizable array implementation of the List interface, 
+found within the java.util package. It provides a dynamic array that can grow or shrink 
+in size as elements are added or removed, unlike traditional arrays which have a fixed size. 
+</pre>
+
+<h4 class="bg-danger-subtle py-2">  Writing data in Document using File </h4>
+
+<pre style="font-size:20px;">
+
+package streams1;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+public class datawriting 
+{
+  public static void main(String[] args) 
+	{
+		File f1 = new File("C:\\Users\\Admin\\Desktop\\datapro.txt");
+		try {
+			if(f1.createNewFile())
+			{
+				System.out.println(" file created "+f1.getName());
+			}
+			else
+			{
+				System.out.println(" file is existed ");
+			}
+		} catch (IOException e) {
+	
+			e.printStackTrace();
+		}
+	   
+		try (PrintWriter output = new PrintWriter(f1)) {
+			 output.print("\n data of the day.");
+			 
+			 output.print("\n\t User Name : Sri");
+			 output.print("\n\t Purchased : Window Ac");
+			 output.print("\n\t Price     : 49000/- Rs.");
+			 
+			 output.close();
+		
+		} catch (FileNotFoundException e) {
+		
+			e.printStackTrace();
+		}
+	}
+}
+
+</pre>
+        
+</div>  <!-- row ending -->
+
+    <div class="row px-5 py-2" id="dataReading">
+
+        <h4 class="bg-success-subtle py-2"> Data Reading with File </h4> 
+        
+        <pre style="font-size:20px;">
+
+        In Java, an ArrayList is a resizable array implementation of the List interface, 
+        found within the java.util package. It provides a dynamic array that can grow or shrink 
+        in size as elements are added or removed, unlike traditional arrays which have a fixed size. 
+        </pre>
+
+    <h4 class="bg-danger-subtle py-2">  Reading data in Document using File </h4>
+
+<pre style="font-size:20px;">
+
+package streams1;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+public class datawriting {
+
+	public static void main(String[] args) {
+	
+		System.out.println("User Data Reading: ");
+		File file = new File("C:\\Users\\Admin\\Desktop\\prodata101.txt");	
+		
+		try (Scanner input = new Scanner(file)) {
+			
+			while(input.hasNext())
+			{
+				String temp = input.next();
+				
+				System.out.print(temp+" ");
+			}
+		} 
+		catch (FileNotFoundException e) {
+			
+			e.printStackTrace();
+		}
+	}
+
+}
+
+</pre>
+        
+</div>   <!-- row ending -->
+
+  <div class="row px-5 py-2" id="serialize">
+
+        <h4 class="bg-success-subtle py-2"> Serialization Interface </h4> 
+        
+        <pre style="font-size:20px;">
+
+        In Java, an ArrayList is a resizable array implementation of the List interface, 
+        found within the java.util package. It provides a dynamic array that can grow or shrink 
+        in size as elements are added or removed, unlike traditional arrays which have a fixed size. 
+        </pre>
+
+    <h4 class="bg-danger-subtle py-2">  Serialization Process </h4>
+
+<pre style="font-size:20px;">
+
+package streams1;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+public class datawriting {
+
+	public static void main(String[] args) {
+	
+		File f1 = new File("C:\\Users\\Admin\\Desktop\\datapro.txt");
+		
+		try {
+			if(f1.createNewFile())
+			{
+				System.out.println(" file created "+f1.getName());
+			}
+			else
+			{
+				System.out.println(" file is existed ");
+			}
+		} catch (IOException e) {
+	
+			e.printStackTrace();
+		}
+		
+	   
+		try (PrintWriter output = new PrintWriter(f1)) {
+			 output.print("\n data of the day.");
+			 
+			 output.print("\n\t User Name : Sri");
+			 output.print("\n\t Purchased : Window Ac");
+			 output.print("\n\t Price     : 49000/- Rs.");
+			 
+			 output.close();
+		
+		} catch (FileNotFoundException e) {
+		
+			e.printStackTrace();
+		}
+
+	}
+
+}
+
+</pre>
+        
+</div> 
+</div> <!-- Container Ending -->
+<div class="pt-5 "> </div>
+</body>
+</html>
